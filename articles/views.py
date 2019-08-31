@@ -11,6 +11,12 @@ def blog_list(request):
     articles = Article.objects.all().order_by('date')
     return render(request, 'blog/view_blog.html', {'articles': articles})
 
+
+def article_detail(request, slug):
+    article = Article.objects.get(slug=slug)
+    return render(request, 'blog/blog_detail.html', {'article': article})
+
+
 @login_required(login_url='/accounts/login/')
 def create_article(request):
     form = forms.AddArticle()

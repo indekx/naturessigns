@@ -1,0 +1,16 @@
+{% extends "base_file.html" %}
+{% load static %}
+
+{% block blog_detail %}
+  <section id="blog_detail">
+      <div class="containter article">
+          <div class="row">
+              <div class="offset-md-1 col-md-11">
+                <h2>{{article.title}}</h2>
+                <p>{{article.detail}}</p>
+                <small>{{article.date}}</small>
+              </div>
+          </div>
+      </div>
+  </section>
+{% endblock%}
