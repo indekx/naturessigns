@@ -5,11 +5,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h3>Our Informative Articles</h3>
                     {% if articles %}
                     {% for article in articles %}
                         {% if article.title %}
-                        <!-- Article Start -->   
+                        <!-- Article Start -->  
+                        <h3>Our Informative Articles</h3> 
                         <h4><a href="{% url 'article_detail' slug=article.slug %}">{{article.title}}</a> <small>~ By {{article.created_by}}</small></h4>
                         <p>Published: {{article.date}}</p>                                             
                         {% endif %}
