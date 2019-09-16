@@ -1,0 +1,27 @@
+{% extends "base_file.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block create_article %}
+    <section id="delete-article-page">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-md-8">
+                    <div class="content-section" style="margin-top: 70px;">
+                        <form method="POST">
+                            {% csrf_token %} 
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4">Delete Article</legend>
+                                <h5>This article will be permanently deleted. Are you sure you want to delete the article? {{object.title}}</h5>
+                            </fieldset>
+                            <div class="form-group offset-md-3  col-md-3 mb-0" style="padding-left: 0;">
+                                <button class="btn btn-outline-danger" type="submit">Confirm, Delete</button>
+                                <a class="btn btn-outline-secondary mt-3" href="{% url 'article_detail' object.slug %}">No, Cancel</a>
+                            </div>  
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

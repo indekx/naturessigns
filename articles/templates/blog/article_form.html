@@ -5,18 +5,13 @@
 {% block create_article %}
     <div class="container" style="margin-top: 120px">
         <h2 style="padding-left: 280px;">Create a New Informative Blog</h2>
-        <form class="sign-form" method="POST">
+        <form class="sign-form" method="post" action="{% url 'create_article' %}">
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group offset-md-3 col-md-3 mb-0">
                     {{form.title|as_crispy_field}}
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group offset-md-3  col-md-3 mb-0">
-                    {{form.slug|as_crispy_field}}
-                </div>
-            </div> 
             <div class="form-row">
                 <div class="form-group offset-md-3  col-md-3 mb-0">
                     {{form.content|as_crispy_field}}
@@ -27,9 +22,14 @@
                     {{form.detail|as_crispy_field}}
                 </div>
             </div>
+            <div class="form-row">
+                <div class="form-group offset-md-3  col-md-3 mb-0">
+                    {{form.slug|as_crispy_field}}
+                </div>
+            </div>
             <br>
             <div class="form-group offset-md-3  col-md-3 mb-0" style="padding-left: 0;">
-            <input type="submit" value="Create Blog" class="btn btn-success" style="width:90px;">   
+            <input type="submit" value="Create Post" class="btn btn-success" style="width:90px;">   
             </div>  
         </form>
     </div>

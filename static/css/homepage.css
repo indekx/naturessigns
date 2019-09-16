@@ -24,47 +24,24 @@ img{
     color: #333;
 }
 
-#showcase_header{
-    min-height: 650px;
-    color: #000;
-    text-align: center;
+.btn.what_we_do_btn.top_cta_btn{
+    display: inline-block;
+    color: #eee;
+    text-decoration: none;
+    padding: 1em 2em;
+    border: 1px solid #eee;
+    margin: 05em 0;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.btn.what_we_do_btn.top_cta_btn:hover{
+    background: #111;
+    color: #eee;
 }
 
 #section-e p{
     color: rgb(136, 132, 132);
-}
-
-#showcase_header .showcase_bg_image{
-    position: absolute;
-    background: url('../images/cards/landing-img_bg.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 650px;
-    z-index: -1;
-    opacity: 0.3;
-    margin-top: 80px;
-}
-
-#showcase_header h1{
-    padding-top: 250px;
-    padding-bottom: 0;
-    font-size: 3.5rem;
-}
-
-#showcase_header h2{
-    font-weight: 700;
-    color: rgb(105, 103, 103);
-}
-
-#showcase_header p{
-    font-size: 1.1rem;
-}
-
-#showcase_header .header_content_wrap,
-#section-a .section-a-content-wrap{
-    padding: 0 1.5em;
 }
 
 #section-a{

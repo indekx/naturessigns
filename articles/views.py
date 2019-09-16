@@ -1,25 +1,78 @@
-from django.shortcuts import render, redirect
-from django.views import generic
-from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView, 
+    DeleteView
+)
+   
 from .models import Article
 from django.contrib.auth.decorators import login_required
 from . import forms
 
 
 # Create your views here.
-def blog_list(request):
-    articles = Article.objects.all().order_by('date')
-    return render(request, 'blog/view_blog.html', {'articles': articles})
+class ArticleListView(ListView):
+    model = Article
+    template_name = 'blog/view_blog.html'
+    context_object_name = 'articles'
+    ordering = ['-date']
 
 
-def article_detail(request, slug):
-    article = Article.objects.get(slug=slug)
-    return render(request, 'blog/blog_detail.html', {'article': article})
+class ArticleDetailView(DetailView):
+    queryset = Article.objects.all() # Same as using 'model' which is 'Article'
+    template_name = 'blog/blog_detail.html'
+
+    def get_object(self):
+        slug = self.kwargs.get('slug')
+        return get_object_or_404(Article, slug=slug)
 
 
-@login_required(login_url='/accounts/login/')
-def create_article(request):
-    form = forms.AddArticle()
+class ArticleCreateView(LoginRequiredMixin, CreateView):
+    model = Article
+    template_name = 'blog/article_form.html'
+    fields = [
+        'title', 'content', 'detail', 'slug'
+    ]
+
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
+
+
+class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Article
+    template_name = 'blog/article_form.html'
+    fields = [
+        'title', 'content', 'detail', 'slug'
+    ]
+
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        article = self.get_object()
+        
+        if self.request.user == article.created_by:
+            return True
+        else:
+            return False
+
     
-    return render(request, 'blog/create_article.html', {'form': form})
+class DeleteArticleView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Article
+    template_name = 'blog/article_confirm_delete.html'
+    success_url = '/articles/article_list/'
+
+    def test_func(self):
+        article = self.get_object()
+        
+        if self.request.user == article.created_by:
+            return True
+        else:
+            return False
+
 

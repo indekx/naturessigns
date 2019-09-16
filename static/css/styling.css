@@ -167,18 +167,6 @@ p.landing_banner_left_text{
     background-repeat: no-repeat;
 }
 
-#landing_page_banner{
-    text-align: center;
-    background: url('../images/cards/prostarighttea.PNG');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    min-height: 550px;
-    margin-top: 80px;
-    margin-bottom: 30px;
-    width: 100%;
-}
-
 .services_card_text{
     position: absolute;
     width: 100%;
@@ -384,6 +372,10 @@ img{
     color: #CCCCCC;
     text-align: justify;
     font-size: 1.1em;
+}
+
+.containter.article{
+    margin-top: 50px;
 }
 
 .copy{

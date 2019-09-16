@@ -2,25 +2,40 @@
 {% load static %}
 
 {% block index %}
-<!-- Header showcase area -->
-<header id="showcase_header" class="grid">
-    <div class="showcase_bg_image"></div>
-    <div class="header_content_wrap">
-        <h1>Shrink Enlarged Prostate</h1>
-        <h2> <i>Attain "Zero PSA Values"</i></h2>
-        <p>
-            Take charge of your prostate health. Be in complete control of your manhood and enjoy a blooming life.
-            A good life starts and ends with a big, happy mug of PROSTARight Tea, a proud product of Nature’s Signs.
-            It's a pleasant, brilliant arrangement for those who want to be in control of life, even as man.
-        </p>
-        <a class="btn what_we_do_btn" href="{% url 'prostaright_tea' %}">Learn More</a>
-    </div>
-</header>
+<section id="landing_bg_wrapper" class="skewed">
+        <div class="bg_layer bottom">
+            <div class="bg_content_wrap">
+                <div class="bg_content_body" style="text-align: center; position: absolute; top: 50%; width: 25%; transform: translateY(-50%); color: #fff; ">
+                    <h1>Shrink Enlarged Prostate</h1>
+                    <p>
+                        Take charge of your prostate health. Be in complete control of your manhood and enjoy a blooming life.
+                        A good life starts and ends with a big, happy mug of PROSTARight Tea.
+                    </p>
+                    <a class="btn what_we_do_btn top_cta_btn" href="{% url 'prostaright_tea' %}">Learn More</a>
+                </div>
+                <img src="{% static 'images/showcase/prostaright-box2.jpg' %}" alt="site_landing_banner">
+            </div>
+        </div>
+        <div class="bg_layer top">
+            <div class="bg_content_wrap">
+                <div class="bg_content_body" style="text-align: center; position: absolute; top: 50%; width: 25%; transform: translateY(-50%);">
+                    <h1>Zero PSA Values</h1>
+                    <p>
+                        PROSTARight Tea is proud product of Nature’s Signs that helps cut down your PSAs. It's a pleasant, 
+                        brilliant arrangement for those who want to be in control of life, even as man.
+                    </p>
+                    <a class="btn what_we_do_btn" href="{% url 'prostaright_tea' %}">Learn More</a>
+                </div>
+                <img src="{% static 'images/showcase/prostaright-box1.jpg' %}" alt="site_landing_banner">
+            </div>
+        </div>
+        <div class="handle"></div>
+</section>
 
 <!-- Main content area -->
 <main id="main">
 <!-- Section B -->
-    <section id="section-b" class="grid-section-b" style="margin-left: 50px; padding-top: 130px !important; padding-bottom: 60px !important">
+    <section id="section-b" class="grid-section-b" style="margin-left: 50px; padding-top: 80px !important; padding-bottom: 60px !important">
         <ul>
             <li>
                 <div class="card">
@@ -92,7 +107,7 @@
                 <div class="card-content features-right">
                     <h5 class="card-title">Personal Care</h5>
                     <p>
-                        Self protection from insect-bite, sunburn is very important. Our products address any case timely..
+                        Self protection from insect-bite, sunburn is very important. Our products address any case timely.
                     </p>
                 </div>           
             </li>
