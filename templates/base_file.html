@@ -382,7 +382,7 @@
         
         const slugify = (val) => {
             return val.toString().toLowerCase().trim()
-                .replace(/&/g, '-and-')        // replace & with '-and-''
+                .replace(/&/g, '-and-')      // replace & with '-and-''
                 .replace(/[\s\W-]+/g,'-')    // replace spaces, non-word characters, dashes with a single dash
         };
 

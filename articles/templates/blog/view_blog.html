@@ -10,7 +10,7 @@
                         {% if article.title %}
                         <!-- Article Start -->  
                         <h3>Our Informative Articles</h3> 
-                        <h4><a href="{% url 'article_detail' slug=article.slug %}">{{article.title}}</a> <small>~ By {{article.created_by}}</small></h4>
+                        <h5><a href="{% url 'article_detail' slug=article.slug %}">{{article.title}}</a> <small>~ By {{article.created_by}}</small></h5>
                         <p>Published: {{article.date}}</p>                                             
                         {% endif %}
                     {% endfor %}
