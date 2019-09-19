@@ -148,6 +148,7 @@ class EditProfileForm(UserChangeForm):
             'email',
         ]
 
+
 class ChangePasswordForm(PasswordChangeForm):
     class Meta:
         model = User

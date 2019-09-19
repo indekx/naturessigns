@@ -6,9 +6,9 @@
   <div class="container article">
       <div class="row">
           <div class="col-md-8">
-              <div class="article-body">
-                  <div class="article-metadta">
-                      <a class="mr-2" href="#">By {{object.created_by}}</a>
+              <div class="content-section">
+                  
+                      <h5 class="mr-2">By {{object.created_by}}</h5>
                       <small class="text-muted">{{object.date}}</small>
                       {% if object.created_by == user %}
                         <div class="update_delete_btn">
@@ -16,9 +16,9 @@
                             <a class="btn btn-outline-danger btn-sm mt-1 mb-1 update-article-cta" href="{% url 'article_delete' object.slug %}">Delete</a>
                         </div>
                       {% endif %}
-                      <h3 style="margin-top: 15px;">{{object.title}}</h3>
-                      <p>{{object.detail}}</p>
-                  </div>
+                      <h3 style="margin-top: 25px">{{object.title}}</h3>
+                      <p >{{object.detail}}</p>
+                  
               </div>    
             </div>
             {% include "blog/article_sidebar.html" %} 

@@ -1,22 +1,21 @@
 {% extends "base_file.html" %}
-
-{% block title %}
-  
-{% endblock title %}
+{% load 'static' %}
 
 {% block view_blog %}
     <main role="main" class="article_list" style="margin-top: 110px; margin-bottom: 70px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                   
+                    <h3 class="mb-3">Articles by {{view.kwargs.username}} ({{page_obj.paginator.count}})</h3> 
                     {% if articles %}
-                        <h3>Our Informative Articles</h3> 
                     {% for article in articles %}
                         {% if article.title %}
-                        <!-- Article Start -->  
-                        
-                        <h5><a class="list_title" href="{% url 'article_detail' slug=article.slug %}">{{article.title}}</a> <small>~ By {{article.created_by}}</small></h5>
+                        <!-- Article Start --> 
+                        <div class="article-metadata">
+                            <a class="mr-2" href="{% url 'user_article' article.created_by.username %}">{{article.created_by}}</a>
+                            <small class="text-muted">{{article.date}}</small>
+                        </div>                      
+                        <h5><a href="{% url 'article_detail' slug=article.slug %}">{{article.title}}</a></h5>
                         <p>Published: {{article.date}}</p>                                             
                         {% endif %}
                     {% endfor %}

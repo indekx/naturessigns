@@ -378,6 +378,10 @@ img{
     margin-top: 50px;
 }
 
+.article_list a.list_title{
+    color: #28a745;
+}
+
 .copy{
     color: antiquewhite;
 }

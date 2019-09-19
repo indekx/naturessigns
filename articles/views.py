@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
@@ -19,7 +20,18 @@ class ArticleListView(ListView):
     template_name = 'blog/view_blog.html'
     context_object_name = 'articles'
     ordering = ['-date']
-    paginate_by = 2
+    paginate_by = 5
+
+
+class CurrentUserArticleListView(ListView):
+    model = Article
+    template_name = 'blog/user_blog_posts.html'
+    context_object_name = 'articles'
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Article.objects.filter(created_by=user).ordering('-date')
 
 
 class ArticleDetailView(DetailView):
