@@ -23,9 +23,9 @@ urlpatterns = [
             ),
             name='reset_password'
         ),
-    url('^reset_password/done/$', auth_views.PasswordResetDoneView.as_view(
-            template_name='accounts/reset_password_done.html'),
-            name='reset_password_done'
+    url('^password_reset/done/$', auth_views.PasswordResetDoneView.as_view(
+            template_name='accounts/password_reset_done.html'),
+            name='password_reset_done'
         ),
 
     url(r'^reset_password_confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
