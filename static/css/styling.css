@@ -432,7 +432,7 @@ section .section-title {
 	-webkit-transition: .5s all ease;
 	-moz-transition: .5s all ease;
     transition: .5s all ease;
-    color: rgb(234, 157, 240);
+    color: #ecb8b8;
 }
 #footer ul.social li:hover a i {
 	font-size:30px;
