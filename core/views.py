@@ -95,3 +95,17 @@ def add_product(request):
     else:
         form = forms.AddProduct()
     return render(request, 'products_list/add_product.html', {'form': form})
+
+
+def contact_us(request):
+    if request.method == 'POST':
+        form = forms.ContactUsForm(request.POST or None)
+        if form.is_valid():
+
+            # Process form data
+            form_instance_create = form.save(commit=False)
+            form_instance_create.save()
+            return redirect('index')
+    else:
+        form = forms.ContactUsForm()
+    return render(request, 'contact_us.html', {'form': form})

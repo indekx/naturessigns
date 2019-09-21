@@ -193,6 +193,10 @@
       
     {% endblock %}
 
+    {% block contact_us %}
+
+    {% endblock %}
+
     <!-- end block tags-->
 
     <!-- Footer Begins -->
@@ -220,6 +224,7 @@
                         <ul class="list-unstyled quick-links">
                             <li><a href="{% url 'index' %}"><i class="fa fa-angle-double-right"></i>Home</a></li>
                             <li><a href="{% url 'about_us' %}"><i class="fa fa-angle-double-right"></i>About</a></li>
+                            <li><a href="{% url 'contact_us' %}"><i class="fa fa-angle-double-right"></i>Contact us</a></li>
                             <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Reasearch & Data</a></li>
                             <li><a href="{% url 'signup' %}"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
                             <li><a href="#"><i class="fa fa-angle-double-right"></i>Schedule Appointment</a></li>
