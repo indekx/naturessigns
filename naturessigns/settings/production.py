@@ -161,8 +161,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = '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'
-EMAIL_PORT = 465
-EMAIL_USE_SSl = True
-DEFAULT_EMAIL_FROM = "NatureY's Signs Admin Team <admin@naturessigns.com>"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 
