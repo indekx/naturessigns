@@ -157,11 +157,10 @@ LOGOUT_REDIRECT_URL = 'index'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # EMAIL BACKEND
+DEFAULT_FROM_EMAIL = 'admin@naturessigns.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = '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'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
-

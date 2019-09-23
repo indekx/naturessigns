@@ -106,8 +106,8 @@ def contact_us(request):
         form_message = form.cleaned_data.get('message')
         form_full_name = form_first_name + ' ' + form_last_name
 
-        subject = 'Site contact mail'
-        from_email = settings.EMAIL_HOST_USER
+        subject = 'Contact mail received'
+        from_email = settings.DEFAULT_FROM_EMAIL
         to_email = [from_email]
         contact_message = ''' 
         %s: %s via %s 
@@ -118,7 +118,7 @@ def contact_us(request):
 
         send_mail(
             subject, contact_message, from_email,
-            to_email, fail_silently=False
+            to_email, fail_silently=True
         )
 
         return redirect('index')
