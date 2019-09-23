@@ -158,10 +158,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # EMAIL BACKEND
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = os.environ.get('EMAIL_PORT')
-EMAIL_USE_TLS = True
-DEFAULT_EMAIL_FROM = os.environ.get('DEFAULT_EMAIL_FROM')
+EMAIL_HOST = 'smtp.sendgrid.com'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 465
+EMAIL_USE_SSl = True
+DEFAULT_EMAIL_FROM = "NatureY's Signs Admin Team <admin@naturessigns.com>"
+
 
