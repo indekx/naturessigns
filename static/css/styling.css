@@ -382,6 +382,10 @@ img{
     color: #28a745;
 }
 
+.forgotLnk{
+    color: #555 !important;
+}
+
 .copy{
     color: antiquewhite;
 }

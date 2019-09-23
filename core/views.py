@@ -1,23 +1,24 @@
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Q
-from django.shortcuts import (get_object_or_404,  # Look for object that relates to some sought of call.
-                              redirect, render)
+from django.http import HttpResponseRedirect
+
+from django.shortcuts import redirect, render, get_object_or_404 
 from django.template import Context, Template, loader
 from django.template.loader import get_template
+
+from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views import generic
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from requests.api import request
 
 from . import forms
-
-from django.contrib import messages
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-
-from .models import Item, OrderItem, Order
+from .models import Item, Order, OrderItem
 
 
 def index(request):
@@ -76,8 +77,6 @@ def product_prostaright(request):
     return render(request, 'products_list/prostaright_tea.html')
 
 
-from . import forms
-from .models import Item
 
 
 # Create your views here.
@@ -97,15 +96,31 @@ def add_product(request):
     return render(request, 'products_list/add_product.html', {'form': form})
 
 
+#Contact us view
 def contact_us(request):
-    if request.method == 'POST':
-        form = forms.ContactUsForm(request.POST or None)
-        if form.is_valid():
+    form = forms.ContactUsForm(request.POST or None)
+    if form.is_valid():
+        form_first_name = form.cleaned_data.get('first_name')
+        form_last_name = form.cleaned_data.get('last_name')
+        form_contact_email = form.cleaned_data.get('contact_email')
+        form_message = form.cleaned_data.get('message')
+        form_full_name = form_first_name + ' ' + form_last_name
 
-            # Process form data
-            form_instance_create = form.save(commit=False)
-            form_instance_create.save()
-            return redirect('index')
-    else:
-        form = forms.ContactUsForm()
+        subject = 'Site contact mail'
+        from_email = settings.EMAIL_HOST_USER
+        to_email = [from_email]
+        contact_message = ''' 
+        %s: %s via %s 
+        '''%(form_full_name,
+            form_message,
+            form_contact_email     
+        )
+
+        send_mail(
+            subject, contact_message, from_email,
+            to_email, fail_silently=False
+        )
+
+        return redirect('index')
+    
     return render(request, 'contact_us.html', {'form': form})

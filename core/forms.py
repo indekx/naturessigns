@@ -26,7 +26,7 @@ class ContactUsForm(forms.Form):
         attrs={'placeholder': 'Last name'}
         ), label="", max_length=65, required=True
     )
-    email = forms.EmailField(widget=forms.TextInput(
+    contact_email = forms.EmailField(widget=forms.TextInput(
         attrs={'placeholder': 'Email address'}
         ), label="", max_length=254, required=True
     )
