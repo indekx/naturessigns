@@ -1,8 +1,8 @@
 from django import forms
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import (AuthenticationForm, PasswordChangeForm,
+                                       UserChangeForm, UserCreationForm)
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.core.exceptions import ValidationError
 from django.forms.widgets import PasswordInput, TextInput
 from pkg_resources import require
@@ -62,7 +62,8 @@ class SignUpForm(forms.Form):
     email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'Your email'}), label="", max_length=254, required=True)
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Enter password'}), label="", min_length=8, required=True)
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm password'}), label="", required=True)
-    
+    i_have_gone_through_and_accept_terms_and_condtions = forms.BooleanField(required=True, widget=forms.CheckboxInput())
+
 
     class Meta:
         model = User
@@ -73,6 +74,7 @@ class SignUpForm(forms.Form):
             'email',
             'password1',
             'password2',
+            'i_accept_terms_and_condtions',
          ]
              
     def clean_username(self):

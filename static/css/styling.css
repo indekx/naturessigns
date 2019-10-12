@@ -28,12 +28,20 @@ html, body {
       color: #FFFFFF;
   }
 
+  #i_accept_terms_and_condtions{
+      margin-right: 15px !important;
+  }
+
+  .firstNav.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top{
+      background-color:#FEFEFE !important;
+  }
+
   .firstNav.navbar.ul.li{
       padding-top: 70px;
   }
 
-  .nav.navbar.ul.a{
-      text-transform: uppercase;    
+  ul.mainNavMenu{
+      text-transform: capitalize !important;    
   }
 
   .dropdown:hover>.dropdown-menu{
@@ -192,10 +200,11 @@ p.pb-3{
     
 }
 
-.service_request_cta{
+.service_request_cta.btn.btn-secondary.btn-rounded{
     background: none;
     border: 1px solid #eeeeee;
     min-width: 75px;
+    background: transparent !important;
 }
 
 .card.card-image.about_page_banner{
@@ -220,6 +229,14 @@ p.pb-3{
     min-width: 75px;
     margin-left: 15px;
     margin-right: 15px;
+}
+
+.btn.btn-success.btn-lg.showcase-btn.about_us_btn{
+    color: #FFFFFF !important;
+}
+
+.about-btn.btn.btn-secondary.btn-rounded{
+    background: transparent !important;
 }
 
 .navbar-form.navbar-left{
@@ -374,12 +391,47 @@ img{
     font-size: 1.1em;
 }
 
+/* Order Summary */
+main.order_summary{
+    margin-top: 90px;
+    background-color: azure;
+    min-height: 50vh;
+}
+
+.order_summary h2{
+    margin-top: 20px;
+}
+
+section.checkout{
+    margin-top: 65px;
+    background: azure;
+    min-height: 50vh;
+}
+
+section.checkout h2{
+text-align: center;
+color: #555;
+margin-bottom: 25px;
+}
+
 .containter.article{
     margin-top: 50px;
 }
 
+.fa.mr-2.ml-2.fa-shopping-cart.fa-2x::before{
+    margin-right: 5px;
+}
+
+.badge.badge-pill.mr-2.mt-2{
+    box-shadow: none !important;
+}
+
 .article_list a.list_title{
     color: #28a745;
+}
+
+del.currency{
+    text-decoration-style: double;
 }
 
 .forgotLnk{

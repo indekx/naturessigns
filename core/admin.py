@@ -5,7 +5,7 @@ from django.contrib import admin
 from .models import Item, OrderItem, Order
 
 
-class ProductAdmin(admin.ModelAdmin):
+class ProductQSetAdmin(admin.ModelAdmin):
     display = [
         ('Description', 
            {'fields': 

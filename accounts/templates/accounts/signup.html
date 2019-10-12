@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block signup%}   
-    <section class="signup-banner">
+    <section class="signup-banner" style="background-color: rgb(245, 239, 239)">
         <div class="container signup_page">
             <h2 class="signup-screen" style="text-align: center; padding-top: 25px;">Welcome, enter required fields to create an account.</h2>
             <br>
@@ -34,9 +34,16 @@
                     </div>
                 </div>
                 <br>
-                <div class="form-group offset-md-3  col-md-3 mb-0" style="padding-left: 0;">
-                <input type="submit" value="Sign Up" class="btn btn-success" style="width:90px;">   
-                </div>  
+                <!-- Default checked -->
+                <div class="form-group offset-md-3 col-md-4 mb-0">
+                    <span class="mr-3">
+                        {{form.i_have_gone_through_and_accept_terms_and_condtions|as_crispy_field}}
+                    </span>
+                </div>
+                <div class="form-group offset-md-3  col-md-4 mb-0" style="padding-left: 0;">
+                    <input type="submit" value="Sign Me Up" class="btn btn-outline-success"> 
+                    <a class="forgotLnk ml-4" href="{% url 'reset_password' %}">I've an account but can't access it</a>  
+                </div> 
             </form>
         </div>
         <br>

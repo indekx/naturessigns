@@ -1,0 +1,63 @@
+{% extends "base_file.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block order_summary %}
+
+    <section class="checkout">
+        <div class="container">   
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Order Verification and Payment</h2>
+                    <div class="card">
+                        <form method="POST" class="card-body">
+                            {% csrf_token %}
+                            <div class="md-form mb-4">
+                                {{form.shipping_address_line_1|as_crispy_field}}
+                            </div>
+                            <div class="md-form mb-4">
+                                {{form.shipping_address_line_2|as_crispy_field}}
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-4 mb-6 ml-0 mt-2">
+                                    <h6 style="margin-bottom: 9px;">State</h6>
+                                    {{form.state|as_crispy_field}}
+                                </div>  
+                                <div class="col-md-4 mb-4 ml-0">
+                                    {{form.zip_code|as_crispy_field}}
+                                </div> 
+                                <div class="col-md-4 mb-4 ml-0">
+                                    {{form.phone_number|as_crispy_field}}
+                                </div> 
+                            </div> 
+                            <div class="form-row">
+                                <div class="col-md-4 mb-0 ml-0">
+                                    <h6 style="margin-bottom: 15px;">Billing Address</h6>
+                                    {{form.same_as_shipping_address|as_crispy_field}}
+                                </div>
+                            </div> 
+                            <div class="form-row">
+                                <div class="col-md-4 mb-4 ml-0">
+                                   {{form.save_info|as_crispy_field}}
+                                </div>
+                            </div>  
+                            <div class="form-row">
+                                <div class="col-sm-3 col-md-3 mb-3">
+                                    <div class="card" style="box-shadow: none;">
+                                        <img src="{% static 'images/cards/payment_cadrs.PNG' %}">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                            <button class="btn btn-success btn-lg btn-block" type="submit">Yes, Continue to Payment</button>          
+                        </form> 
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    {% include "store/order_snippet.html" %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

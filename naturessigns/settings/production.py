@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'articles',
     'appointments',
     'business',
-    'crispy_forms',
     'core',
+    'crispy_forms',
+    'purchase',
 ]
 
 MIDDLEWARE = [

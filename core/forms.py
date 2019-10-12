@@ -9,25 +9,24 @@ class AddProduct(forms.ModelForm):
             'title',
             'category',
             'image',
-            'width',
-            'height',
             'description',
-            'detail',
          ]
         
     login_url = '/login/' 
 
 class ContactUsForm(forms.Form):
     first_name = forms.CharField(widget=forms.TextInput(
-        attrs={'placeholder': 'First name'}
+        attrs={'placeholder': 'First Name'}
         ), label="", max_length=65, required=True
     )
+    
     last_name = forms.CharField(widget=forms.TextInput(
-        attrs={'placeholder': 'Last name'}
+        attrs={'placeholder': 'Last Name'}
         ), label="", max_length=65, required=True
     )
+    
     contact_email = forms.EmailField(widget=forms.TextInput(
-        attrs={'placeholder': 'Email address'}
+        attrs={'placeholder': 'Email Address'}
         ), label="", max_length=254, required=True
     )
 
