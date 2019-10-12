@@ -456,6 +456,11 @@ section {
     margin-right: 10px;
 }
 
+.secondary_footer{
+    min-height: 120px !important;
+    background: rgb(8, 0, 0);
+}
+
 section .section-title {
     text-align: center;
     color: #003300;
@@ -488,7 +493,7 @@ section .section-title {
 	-webkit-transition: .5s all ease;
 	-moz-transition: .5s all ease;
     transition: .5s all ease;
-    color: #ecb8b8;
+    color: #2bbbad;
 }
 #footer ul.social li:hover a i {
 	font-size:30px;
