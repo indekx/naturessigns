@@ -118,3 +118,18 @@ class DistributorApplication(forms.Form):
     login_url = '/login/'
 
 
+class AdCreate(forms.ModelForm):
+    class Meta:
+        model = models.Advert
+        fields = [
+            'label',
+            'image',
+            'price',
+            'discount_price',
+            'description',
+            'category',
+            'detail',
+            'slug',
+         ]
+
+

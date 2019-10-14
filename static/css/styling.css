@@ -18,6 +18,55 @@ html, body {
       bottom: -27px !important;
   }
 
+/* search box style begins */
+.searchbox{
+    position: absolute;
+    top: 57%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    height: 53px;
+    border-radius: 45%;
+    padding: 10px; 
+}
+
+.searchbtn{
+    color: #2c2727;
+    width: 30px;
+    float: right;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbtn:hover{
+    color: #28a745;
+}
+
+.searchbox:hover>.searchtext{
+    padding: 0 6px;
+    width: 150px;
+    border-bottom: #999 1px solid;
+    z-index: 5;
+}
+
+.searchtext{
+    outline: none;
+    border: none;
+    background: none;
+    float: left;
+    color: #777;
+    padding: 0%;
+    font-size: 12px;
+    line-height: 20px;
+    transition: 0.5s;
+    width: 0px;
+}
+/* search box style ends */
+
   .signup_cta_btn{
       background: #000000;
       color: #FFFFFF;

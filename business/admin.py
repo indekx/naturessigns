@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import BecomeAnAffiliate
+from .models import BecomeAnAffiliate, Advert
+
 
 class BecomeAnAffiliateAdmin(admin.ModelAdmin):
     display = [
@@ -20,5 +21,5 @@ class BecomeAnAffiliateAdmin(admin.ModelAdmin):
     class Meta:
         model = BecomeAnAffiliate
 
-admin.site.register(BecomeAnAffiliate, BecomeAnAffiliateAdmin)
+admin.site.register(Advert)
 

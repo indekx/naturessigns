@@ -10,7 +10,7 @@ from django.utils import timezone
 from .forms import CheckOutForm
 
 from .models import BillingAddress
-from core.models import Order, OrderItem
+from core.models import Order, OrderItem, Item
 
 
 # Checkout view

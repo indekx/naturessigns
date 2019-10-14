@@ -1,21 +1,47 @@
-import urllib
-import requests
 import json
+import urllib
 
-from django.contrib.auth.decorators import login_required
-from django.urls import reverse
-
+import requests
 from django.conf import settings
 from django.contrib import messages
-from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
+from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
 from urllib3 import request
+
+from business.models import Advert
 
 from . import forms
 from .forms import DistributorApplication
-from .models import BecomeAnAffiliate
+from .models import Advert, BecomeAnAffiliate
 
 
 # Create your views here.
+class AdCreateView(LoginRequiredMixin, CreateView):
+    model = Advert
+    template_name = 'business/ad_create.html'
+    fields = [
+        'label', 'image', 'price', 
+        'discount_price', 'description', 
+        'category', 'detail', 'slug'
+    ]
+
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
+
+
+class AdvertListView(ListView):
+    model = Advert
+    template_name = 'business/all_products.html'
+    context_object_name = 'adverts'
+    ordering = ['-date_added']
+    paginate_by = 5
+
+
 def become_an_affiliate(request):
     if request.method == 'POST':
         form = forms.BecomeAnAffiliate(request.POST)
@@ -74,5 +100,3 @@ def become_distributor(request):
         form = forms.DistributorApplication()
 
     return render(request, 'business/become_distributor.html',  {'form': form})
-
-
