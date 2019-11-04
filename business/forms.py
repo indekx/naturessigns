@@ -1,7 +1,8 @@
 from django import forms
-from business import models
 from django.contrib.auth.models import User
+from django.forms.widgets import Textarea
 
+from business import models
 
 GENDER = (
     ('', 'select'),
@@ -131,5 +132,53 @@ class AdCreate(forms.ModelForm):
             'detail',
             'slug',
          ]
+
+
+class SellYourProductForm(forms.Form):
+    first_name = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': 'First Name'}
+        ), label="", max_length=65, required=True
+    )
+    
+    last_name = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': 'Last Name'}
+        ), label="", max_length=65, required=True
+    )
+    
+    contact_email = forms.EmailField(widget=forms.TextInput(
+        attrs={'placeholder': 'Email Address'}
+        ), label="", max_length=254, required=True
+    )
+
+    company_name = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': 'Company Name'}
+        ), label="", max_length=254, required=True
+    )
+
+    country = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': 'Country'}
+        ), label="", max_length=254, required=True
+    )
+
+    product_name = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': 'Product Name or Title'}
+        ), label="", max_length=1500, required=True 
+    )
+
+    about_product = forms.CharField(widget=forms.Textarea(
+        attrs={'placeholder': 'Briefly describe the product'}
+        ), label="", max_length=1500, required=True 
+    )
+
+    message = forms.CharField(widget=forms.Textarea(
+        attrs={'placeholder': 'Additional information'}
+        ), label="", max_length=1500, required=False
+    )
+
+    selling_price = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': 'How much do you wish to sell the product'}
+        ), label="", max_length=1500, required=False
+    )
+
 
 

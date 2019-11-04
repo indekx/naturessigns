@@ -1,6 +1,7 @@
 import uuid
 
 from django.conf import settings
+from . import forms
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
@@ -11,18 +12,24 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy
 
-from purchase.models import BillingAddress
+
+class Category(models.Model):
+    cat_name = models.CharField(max_length=160)
+    slug = models.SlugField(blank=True, null=True, unique=True, max_length=250)
+    
+    class Meta:
+        ordering = ('cat_name',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
+    def get_absolute_url(self):
+        return reverse('items_by_category', args=[self.slug])
+
+    def __str__(self):
+        return self.cat_name
 
 
 class Item(models.Model):
-    CAT_CHOICES = (
-        ( '', 'select' ),
-        ('BEAUTY', 'Beauty'),
-        ('PERSONAL_CARE', 'Personal Care'),
-        ('MEDICINE_AND_TREATMENT', 'Medicine & Treatment'),
-        ('NATURAL_AND_ORGANIC', 'Natural & Organic'),
-        ('SUPPLEMENT_AND_VITAMINS', 'Supplements & Vitamins'),
-    )    
 
     LABEL_CHOICES = (
         ('', 'select'),
@@ -35,15 +42,16 @@ class Item(models.Model):
     image = models.ImageField(blank=False, default=None, null=False)
     price = models.DecimalField(blank=False, null=False, default=None, max_digits=19, decimal_places=2)
     discount_price = models.DecimalField(blank=True, null=True, default=None, max_digits=19, decimal_places=2)
-    category = models.CharField(choices=CAT_CHOICES, default='select', max_length=20)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None) 
     label = models.CharField(choices=LABEL_CHOICES, max_length=15, default='select')
     description = models.TextField(blank=False, max_length=3000)
     additional_information = models.TextField(blank=True, max_length=3000)
     slug = models.SlugField()
     date_added = models.DateTimeField(auto_now_add=True, auto_now=False)
 
+
     class Meta:
-        ordering = ['date_added']
+        ordering = ['-date_added']
 
     def __str__(self):
         return self.title
@@ -54,7 +62,7 @@ class Item(models.Model):
     })
 
     def get_add_to_cart_url(self):
-        return reverse('add_to_cart', kwargs = {
+        return reverse('add_to_cart', kwargs={
         'slug': self.slug
     })
 
@@ -101,7 +109,7 @@ class Order(models.Model):
     items = models.ManyToManyField(OrderItem)
     ordered = models.BooleanField(default=False)
     ordered_date = models.DateTimeField()
-    billing_address = models.ForeignKey(BillingAddress, on_delete=models.SET_NULL, null=True, blank=True)
+    billing_address = models.ForeignKey('BillingAddress', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.user.username
@@ -111,3 +119,16 @@ class Order(models.Model):
         for order_item in self.items.all():
             sum_total += order_item.get_final_price()
         return sum_total
+
+class BillingAddress(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    shipping_address_line_1 = models.CharField(max_length=255)
+    shipping_address_line_2 = models.CharField(max_length=255)
+    state = models.CharField(choices=forms.STATES, max_length=55)
+    phone_number = models.CharField(blank=False, null=False, default=None, max_length=15)
+    zip_code = models.CharField(blank=True, max_length=6)
+    same_as_shipping_address = models.BooleanField(blank=True, null=True)
+    save_info = models.BooleanField(blank=True, null=True)
+
+    def __str__(self):
+        return self.user.username

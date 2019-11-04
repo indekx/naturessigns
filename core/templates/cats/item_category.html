@@ -1,0 +1,8 @@
+
+{% if items %}
+{% for item in items  %}
+      {% if item.category %}
+         <a class="dropdown-item" href="{{item.category.get_absolute_url}}">{{item.category}}</a>
+      {% endif %}
+  {% endfor %}  
+{% endif %}

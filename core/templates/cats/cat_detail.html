@@ -1,0 +1,15 @@
+{% extends "base_file.html" %}
+{% load static %}
+
+{% block product_detail %}
+  <main class="cat-detail">
+
+        {% if items %}
+        {% for item in items  %}
+              {% if item.category %}
+                 <a class="dropdown-item" href="{{item.category.get_absolute_url}}">{{item.category}}</a>
+              {% endif %}
+          {% endfor %}  
+        {% endif %}
+  </main>
+{% endblock %}

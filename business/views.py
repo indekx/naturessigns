@@ -2,6 +2,7 @@ import json
 import urllib
 
 import requests
+from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -100,3 +101,37 @@ def become_distributor(request):
         form = forms.DistributorApplication()
 
     return render(request, 'business/become_distributor.html',  {'form': form})
+
+
+def sell_your_product(request):
+    form = forms.SellYourProductForm(request.POST or None)
+    if form.is_valid():
+        form_first_name = form.cleaned_data.get('first_name')
+        form_last_name = form.cleaned_data.get('last_name')
+        form_contact_email = form.cleaned_data.get('contact_email')
+        form_message = form.cleaned_data.get('message')
+        form_full_name = form_first_name + ' ' + form_last_name
+        company_name = form.cleaned_data.get('company_name')
+        country = form.cleaned_data.get('country')
+        about_product = form.cleaned_data.get('about_product')
+        additional_message = form.cleaned_data.get('additional_message')
+        selling_price = form.cleaned_data.get('selling_price')
+
+        subject = 'Sell Email Received from a Visitor'
+        from_email = settings.DEFAULT_FROM_EMAIL
+        to_email = ['from_email']
+        contact_message = ''' 
+        %s: %s via %s 
+        '''%(form_full_name,
+            form_message,
+            form_contact_email,
+        )
+
+        send_mail(
+            subject, contact_message, from_email,
+            to_email, fail_silently=False
+        )
+
+        return redirect('index')
+    
+    return render(request, 'business/sell_product.html', {'form': form})

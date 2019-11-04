@@ -46,7 +46,7 @@ html, body {
     color: #28a745;
 }
 
-.searchbox:hover>.searchtext{
+.searchbox >form:hover>.searchtext{
     padding: 0 6px;
     width: 150px;
     border-bottom: #999 1px solid;
@@ -293,17 +293,6 @@ p.pb-3{
 	bottom: -27px;
 }
 
-input.form-control.search-box{
-	width: 550px;
-	background-color: transparent !important;
-	box-shadow: none;
-    border-style: none;
-    border: 1px solid #CCCCCC;
-    border-radius: .25rem;
-    color: darkgrey;
-   
-}
-
 .about_prostaright_bg_img{
     background: url('../images/showcase/prosta-right-tea.JPG') center center fixed;
     background-repeat: no-repeat;
@@ -343,6 +332,10 @@ section.signup-banner{
     display: inline-block;
     height: 34px;
     
+}
+
+section.contact_us{
+    background: rgb(206, 245, 229)
 }
 
 .nav-link.cta-signup:hover{

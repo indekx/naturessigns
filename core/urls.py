@@ -1,7 +1,7 @@
 from os import path
 from django.conf.urls import url
 from django.urls import path
-from .views import OrderSummaryView
+from .views import OrderSummaryView, OrderCheckoutView
 from core import views
 
 urlpatterns = [
@@ -16,6 +16,9 @@ urlpatterns = [
     url(r'^products/add/$', views.add_product, name='add_product'), 
     url(r'^products/prostaright_tea/$', views.product_prostaright, name='prostaright_tea'),
     url(r'^services/drugs/$', views.drugs, name='drugs'),
+    url(r'^checkout/', OrderCheckoutView.as_view(), name='proceed_to_pay'),
+    url(r'^products/category/(?P<category_slug>[\w-]+)/$', views.item_category_view, name="items_by_category"),
+    url(r'^products/category_detail/(?P<category_slug>[\w-]+)/$', views.cat_detail_view, name='category_detail'),
     url(r'^products/(?P<slug>[\w-]+)/$', views.product, name='product_detail'),
     url(r'^add_to_cart/(?P<slug>[\w-]+)/$', views.add_to_cart, name='add_to_cart'),
     url(r'^remove_from_cart/(?P<slug>[\w-]+)/$', views.remove_from_cart, name='remove_from_cart'),

@@ -2,6 +2,7 @@ from django.contrib import messages
 from os.path import exists
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from core.models import Item
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
@@ -20,17 +21,18 @@ from django.views import generic
 from django.views.generic import CreateView, DeleteView, UpdateView, DetailView,View
 from requests.api import request
 
-from purchase.views import OrderPaymentView
-
 from . import forms
-from .models import Item, Order, OrderItem
+from .forms import CheckOutForm
+from .models import Item, Order, OrderItem, BillingAddress, Category
 
 # from scipy.constants.constants import slug
 
 
 
 def index(request):
+    
     return render(request, 'homepage.html')
+
 
 def about_us(request):
     return render(request, 'about_us.html')
@@ -111,20 +113,63 @@ def contact_us(request):
 
 def order_item_list(request):
     queryset = Item.objects.all()
-    query = request.GET.get("q")
-    if query:
-        queryset = queryset.filter(
-            Q(title__icontains=query) |
-            Q(description__icontains=query) |
-            Q(category__icontains=query)
-        ).distinct()  # Disallow duplicate items
+    
+    context = {}
 
-    context = {
+    query = ""
+    if request.GET:
+        query = request.GET['q']
+        context['query'] = str(query)
+    
+    context_var = {
 
         "items": queryset,
     }
 
-    return render(request, 'store/order_item_list.html', context)
+    return render(request, 'store/order_item_list.html', context_var)
+
+
+class OrderCheckoutView(View):
+    def get(self, *args, **kwargs):
+        form = CheckOutForm()
+        context_var = {
+            'form': form
+        }
+        return render(self.request, 'store/checkout.html', context_var)
+    
+    def post(self, *args, **kwargs):
+        form = CheckOutForm(self.request.POST or None)
+        try:
+            order = Order.objects.get(user=self.request.user, ordered=False)
+        
+            if form.is_valid():
+                # Create new instance of the form
+                shipping_address_line_1 = form.cleaned_data.get(shipping_address_line_1)
+                shipping_address_line_2 = form.cleaned_data.get(shipping_address_line_2)
+                state = form.cleaned_data.get(state)
+                phone_number = form.cleaned_data.get(phone_number)
+                zip_code = form.cleaned_data.get(zip_code)
+                same_as_shipping_address = form.cleaned_data.get(same_as_shipping_address)
+                save_info = form.cleaned_data.get(save_info)
+
+                billing_address = BillingAddress(
+                    user = self.request.user,
+                    shipping_address_line_1 = shipping_address_line_1,
+                    shipping_address_line_2 = shipping_address_line_2,
+                    state = state,
+                    phone_number = phone_number,
+                    zip_code = zip_code,
+                )
+                billing_address.save()
+                order.billing_address = billing_address
+                order.save()
+
+                return redirect('proceed_to_pay')
+            return redirect('proceed_to_pay')    
+            #return render(self.request, 'store/order_summary.html')
+        except ObjectDoesNotExist:
+            messages.error(self.request, 'You don\'t seem to have any active order')
+            return redirect('order_summary') 
 
 
 class OrderSummaryView(LoginRequiredMixin, View):
@@ -148,7 +193,7 @@ def product(request, slug):
 
 
 # Add_to-cart view
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def add_to_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
     order_item, created = OrderItem.objects.get_or_create(item=item,
@@ -163,11 +208,11 @@ def add_to_cart(request, slug):
             order_item.quantity += 1
             order_item.save()
             messages.info(request, "Item quantity was updated!")
-            return redirect('marketplace')
+            return redirect('order_summary')
             
         else:
             messages.info(request, "Item was added to your cart")
-            order.items.add(order_item)   
+            order.items.add(order_item)
             return redirect('marketplace')
     else: 
         ordered_date = timezone.now()
@@ -234,3 +279,43 @@ def remove_single_item_from_cart(request, slug):
     else: 
         messages.info(request, "You do not have any active order") 
         return redirect('order_summary', slug=slug)
+
+
+def get_item_queryset(query=None):
+    queryset = []
+    queries = query.split(" ") 
+    
+    for q in queries:
+        search_items = Item.objects.filter(
+            Q(title__icontains=q) |
+            Q(description__icontains=q) |
+            Q(category__icontains=q)
+        ).distinct()  # Disallow duplicate items
+
+        for item in search_items:
+            queryset.append(item)
+
+    return list(set(queryset))
+
+
+def item_category_view(request, category_slug):
+    categories = Category.objects.all()
+    item = Item.objects.filter(title='title')
+    if category_slug:
+        category = get_object_or_404(Category, slug=category_slug)
+        item = item.filter(category=category)
+    template_name = 'cats/item_category.html'
+    context = {
+            'categories': categories, 'item': item, 'category': category
+        }
+    return render(request, template_name, context)
+
+
+def cat_detail_view(request, category_slug):
+    template_name = 'cats/cat_detail.html'
+    category = get_object_or_404(Category, category_slug=category_slug)
+    item = Item.objects.filter(category=category)
+    context = {
+            'category': category, 'item': item,
+        }
+    return render(request, template_name, context)
