@@ -500,7 +500,18 @@ section {
 
 .secondary_footer{
     min-height: 120px !important;
-    background: rgb(8, 0, 0);
+    background: rgb(18, 27, 48);
+}
+
+.form-control.newsletter.emailinput.form-control{
+    background-color: #ced4da !important;
+    height: 44px !important;
+    border-radius: 0;
+}
+
+.secondary_footer_btns a.btn.btn-outline-default.mt-5{
+    border: 1px solid rgb(182, 185, 187) !important;
+    color: rgb(202, 205, 207) !important;
 }
 
 section .section-title {
@@ -535,7 +546,7 @@ section .section-title {
 	-webkit-transition: .5s all ease;
 	-moz-transition: .5s all ease;
     transition: .5s all ease;
-    color: #2bbbad;
+    color: #d6f8f5;
 }
 #footer ul.social li:hover a i {
 	font-size:30px;
@@ -576,6 +587,11 @@ section .section-title {
 
 #footer p.i{
     color: #CCCCCC ;
+}
+
+a.designed_by{
+    color: rgb(148, 145, 145) !important;
+    font-size: 11px;
 }
 
 @media (max-width:767px){

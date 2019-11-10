@@ -3,9 +3,10 @@ from django.conf.urls import url
 from django.urls import path
 from .views import OrderSummaryView, OrderCheckoutView
 from core import views
+from core.views import IndexView
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^about_us/$', views.about_us, name='about_us'),
     url(r'^contact_us/$', views.contact_us, name='contact_us'),
     url(r'^resources/$', views.email_subscribe, name='email_subscribe'),
@@ -24,5 +25,5 @@ urlpatterns = [
     url(r'^remove_from_cart/(?P<slug>[\w-]+)/$', views.remove_from_cart, name='remove_from_cart'),
     url(r'^remove_item_from_cart/(?P<slug>[\w-]+)/$', views.remove_single_item_from_cart, 
         name='remove_single_item_from_cart'
-    ),
+        ),
 ]

@@ -18,21 +18,30 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.views import generic
-from django.views.generic import CreateView, DeleteView, UpdateView, DetailView,View
+from django.views.generic import CreateView, DeleteView, UpdateView, DetailView,View, FormView, View
 from requests.api import request
 
 from . import forms
 from .forms import CheckOutForm
 from .models import Item, Order, OrderItem, BillingAddress, Category
+from newsletter.forms import JoinNewsLetterForm
 
 # from scipy.constants.constants import slug
 
+class IndexView(CreateView):
+    template_name = 'homepage.html'
+    form_class = JoinNewsLetterForm
+    success_url = '/'
+
+    def validate_form(self, form):
+        email = form.cleaned_data.get('email')
+        return super(IndexView, self).validate_form(form)
 
 
-def index(request):
+""" def index(request):
     
     return render(request, 'homepage.html')
-
+ """
 
 def about_us(request):
     return render(request, 'about_us.html')

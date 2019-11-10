@@ -1,8 +1,7 @@
-
 {% if items %}
 {% for item in items  %}
       {% if item.category %}
          <a class="dropdown-item" href="#">{{item.category}}</a>
       {% endif %}
-  {% endfor %}  
+  {% endfor %}
 {% endif %}
