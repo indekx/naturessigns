@@ -520,6 +520,50 @@ section .section-title {
     margin-bottom: 50px;
     text-transform: uppercase;
 }
+
+section.legal{
+    background: rgb(42, 66, 110);
+    margin-top: 75px;
+    border-bottom: 1px solid #777;
+    background: linear-gradient(to top, green 0%,rgb(26, 48, 90) 100%);
+}
+
+.main-head h1{
+    font-size: 2.5em;
+    margin-top: 15px;
+    font-weight: 800;
+    color: #FFFFFF;
+}
+
+.main-head p{
+    color: #F1F1F1;
+    font-size: 1em;
+}
+
+section.policy-content{
+    padding-top: 30px;
+    padding-bottom: 60px;
+    background-color: ghostwhite;
+}
+
+.policy-main-content p{
+    font-size: 1em;
+}
+
+.policy-main-content li{
+    font-size: 1em;
+}
+
+a.policy_list{
+    color: #999 !important;
+    font-weight: 500;
+}
+
+.edit-profile h2{
+    margin-top: 70px;
+    margin-bottom: 0;
+}
+
 #footer {
     background: #003300 !important;
 }

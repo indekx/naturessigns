@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'business',
     'core',
     'crispy_forms',
+    'documents',
     'newsletter',
 ]
 
@@ -153,6 +154,9 @@ LOGIN_REDIRECT = '/account/login'
 LOGOUT_REDIRECT_URL = 'index'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#Limit uploads to 5MB
+MAX_UPLOAD_SIZE = 5242880
 
 # EMAIL BACKENDS
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

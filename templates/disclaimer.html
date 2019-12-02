@@ -1,0 +1,37 @@
+{% extends "base_file.html" %}
+{% load static %}
+
+{% block resources %}
+    <section class="legal">
+        <div class="container">
+            <div class="policy-head-wrapper">
+                <div class="main-head">
+                    <h1>Nature's Signs Ltd: Disclaimer</h1>
+                    <p>Last Updated: November 18, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="policy-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 policy-main-content">
+                     <p>
+                        The information contained on https://www.naturessigns.com website (the "Service") is for general information purposes only.
+                     </p>
+                     <p>
+                        Nature's Signs assumes no responsibility for errors or omissions in the contents on the Service.
+                     </p>
+                     <p>
+                        In no event shall Nature's Signs be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other arising out of or in connection with the use of the Service or the contents of the Service. Nature's Signs reserves the right to make additions, deletions, or modification to the contents on the Service at any time without prior notice.
+                     </p>
+                     <p>
+                        Nature's Signs does not warrant that the website is free of viruses or other harmful components.
+                     </p>
+                     <p>Disclaimer of https://www.naturessigns.com</p>
+                </div>
+                {% include "legal_snippet.html" %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

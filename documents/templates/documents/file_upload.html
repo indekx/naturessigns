@@ -1,0 +1,25 @@
+{% extends "base_file.html" %}
+{% load crispy_forms_tags %}
+
+{% block create_article %}
+  <section class="doc_upload" style="background-color: rgb(245, 239, 239); margin-top: 60px;">
+      <div class="container">
+            <h2>Upload a research or whitepaper</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row">
+                     <div class="form-group col-md-6 col-sm-6">
+                        {{form.title|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6 col-sm-6">
+                        {{form.document|as_crispy_field}}
+                        <span class="badge badge-warning">Maximum file size: 5MB</span>
+                    </div>  
+                </div>
+                <button class="btn btn-outline-success" type="submit">Upload</button>
+             </form>
+      </div>
+  </section>
+{% endblock %}

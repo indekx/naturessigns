@@ -87,5 +87,3 @@ class DeleteArticleView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         else:
             return False
-
-

@@ -21,6 +21,8 @@ from django.views import generic
 from django.views.generic import CreateView, DeleteView, UpdateView, DetailView,View, FormView, View
 from requests.api import request
 
+from django.core.files.storage import FileSystemStorage
+
 from . import forms
 from .forms import CheckOutForm
 from .models import Item, Order, OrderItem, BillingAddress, Category
@@ -38,10 +40,25 @@ class IndexView(CreateView):
         return super(IndexView, self).validate_form(form)
 
 
-""" def index(request):
-    
-    return render(request, 'homepage.html')
- """
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')
+
+
+def terms_and_conditions(request):
+    return render(request, 'terms_and_conditions.html')
+
+
+def cookie_policy(request):
+    return render(request, 'cookie_policy.html')
+
+
+def disclaimer(request):
+    return render(request, 'disclaimer.html')
+
+
+def return_policy(request):
+    return render(request, 'returns.html')
+
 
 def about_us(request):
     return render(request, 'about_us.html')

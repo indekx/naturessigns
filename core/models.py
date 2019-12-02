@@ -120,6 +120,7 @@ class Order(models.Model):
             sum_total += order_item.get_final_price()
         return sum_total
 
+
 class BillingAddress(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     shipping_address_line_1 = models.CharField(max_length=255)
@@ -132,3 +133,4 @@ class BillingAddress(models.Model):
 
     def __str__(self):
         return self.user.username
+    

@@ -41,7 +41,8 @@
 }
 
 .bottom h1{
-    color: antiquewhite;
+    color: whitesmoke;
+    font-weight: 700;
 }
 
 .top{
@@ -56,28 +57,10 @@
     color: #222;
 }
 
-/* .handle{
-    position: absolute;
-    height: 100%;
-    background-color: antiquewhite;
-    top: 0;
-    left: 50%;
-    z-index: 3;
-    display: block;
-    width: 5px;
-} */
-
-.skewed .handle{
-    top: 50%;
-    transform: rotate(30deg) translateY(-50%);
-    height: 200%;
-    transform-origin: top;
-}
-
 .skewed .top{
     transform: skew(-30deg);
     margin-left: -1000px;
-    width: calc(50vw + 1000px);
+    width: calc(53vw + 1000px);
 }
 
 .skewed .top .bg_content_wrap{

@@ -1,0 +1,47 @@
+{% extends "base_file.html" %}
+
+{% block view_blog %}
+    <main role="main" class="article_list" style="margin-top: 120px; margin-bottom: 70px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                   
+                    {% if documents %}
+                        <h3>All research, documents and whitepapers</h3> 
+                    {% for document in documents %}
+                        {% if document.title %}
+                        <!-- Article Start -->  
+                        
+                        <h5><a class="list_title" href="{{document.document.url}}" download="{{document.document}}">{{document.title}}</a> <small> {{document.document}}</small></h5>                                            
+                        {% endif %}
+                    {% endfor %}
+                    {% if is_paginated %}
+                        {% if page_obj.has_previous %}
+                            <a class="btn btn-outline-info mb-4" href="?page=1">first</a>
+                            <a class="btn btn-outline-info mb-4" href="?page={{page_obj.previous_page_number}}">previous</a>
+                        {% endif %}
+                        
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <a class="btn btn-info mb-4" href="?page={{num}}">{{num}}</a>
+                            {% endif %}         
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <a class="btn btn-outline-info mb-4" href="?page={{page_obj.next_page_number}}">next</a>
+                            <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages}}">last</a>
+                        {% endif %}
+                    {% endif %}
+                </div>          
+                   
+                    {% else %}
+                    <div class="row">
+                        <div class="offset-lg-5 col-lg-12">
+                            <h4 class="no-artisans">No documents currently available, kindly check back soon!</h4>
+                        </div>
+                     </div>   
+                   {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock view_blog %}
