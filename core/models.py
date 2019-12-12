@@ -12,6 +12,8 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy
 
+from decimal import Decimal
+
 
 class Category(models.Model):
     cat_name = models.CharField(max_length=160)
@@ -92,6 +94,10 @@ class OrderItem(models.Model):
 
     def get_amount_saved(self):
         return self.get_total_item_price() - self.get_total_item_discount_price()
+
+    """ def get_vat(self):
+        vat_rate = Decimal('5.00') / Decimal(100)
+        purchase_amount =  """
 
     def get_final_price(self):
         if self.item.discount_price:
