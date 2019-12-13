@@ -29,7 +29,7 @@ GOOGLE_RECAPTCHA_LIVE_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_LIVE_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'False'
 
-ALLOWED_HOSTS = ['http://www.naturessigns.com', '.naturessigns.com', 'naturessignz.herokuapp.com']
+ALLOWED_HOSTS = ['http://www.naturessigns.com', 'http://www.naturessigns.com', '.naturessigns.com', 'naturessigns.herokuapp.com']
 
 # Application definition
 INSTALLED_APPS = [
