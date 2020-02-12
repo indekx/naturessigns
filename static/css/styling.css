@@ -22,11 +22,15 @@ html, body {
 .searchbox{
     position: absolute;
     top: 57%;
-    left: 57%;
+    left: 60%;
     transform: translate(-50%, -50%);
     height: 53px;
     border-radius: 45%;
     padding: 10px; 
+}
+
+h2.t_n_c{
+    border-bottom: 1px solid #555;
 }
 
 .searchbtn{

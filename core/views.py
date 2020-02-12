@@ -219,7 +219,7 @@ def product(request, slug):
 
 
 # Add_to-cart view
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def add_to_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
     order_item, created = OrderItem.objects.get_or_create(item=item,
@@ -301,7 +301,7 @@ def remove_single_item_from_cart(request, slug):
             return redirect('order_summary')          
         else:
             messages.info(request, "This item was not in your cart")
-            return redirect('order_summary', slug=slug)         
+            return redirect('order_summary', slug=slug)     
     else: 
         messages.info(request, "You do not have any active order") 
         return redirect('order_summary', slug=slug)
