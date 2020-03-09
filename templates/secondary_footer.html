@@ -2,8 +2,8 @@
 {% load static %}
     <footer class="secondary_footer" style="text-align: center">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
+            <div class="sec-foot row">
+                <div class="col-sm-6 col-md-12 ">
                     <form method="POST" action="">
                         {% csrf_token %}
                         <div class="form-row">
@@ -18,7 +18,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-sm-6 secondary_footer_btns float-right">
+                <div class=" col-sm-6 col-md-12 secondary_footer_btns float-right">
                     <a href="{% url 'blog_list' %}" class="btn btn-outline-default mt-5"><i class="fa fa-2x fa-pencil"></i> Blog</a>
                     <a href="{% url 'ad_create' %}" class="btn btn-outline-default mt-5"><i class="fa fa-2x fa-buysellads"></i> Post an Ad</a>
                     <a href="{% url 'marketplace' %}" class="btn btn-outline-default mt-5"><i class="fa fa-2x fa-shopping-cart"></i> Hot Deals</a>

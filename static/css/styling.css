@@ -399,14 +399,12 @@ img{
     color: #555;
 }
 
-#about_prostaright_bg_content ul {
+/* #about_prostaright_bg_content ul {
     margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(minmax(auto, 20vw)) 1fr;
     grid-column-gap: 1vw;
-    
-
-}
+} */
 #about_prostaright_bg_content li{
    
     font-size: 1.1em;
@@ -568,6 +566,7 @@ a.policy_list{
     margin-bottom: 0;
 }
 
+/* footer section style begins */
 #footer {
     background: #003300 !important;
 }
@@ -642,13 +641,64 @@ a.designed_by{
     font-size: 11px;
 }
 
-@media (max-width:767px){
+/* footer section style ends */
+
+/* Media Queries */
+
+
+@media screen and (max-width:768px){
 	#footer h5 {
     padding-left: 0;
     border-left: transparent;
     padding-bottom: 0px;
     margin-bottom: 10px;
   }
+  ul.navbar-nav.mr-auto.mainNavMenu{
+      margin-left: 30px !important;
+      margin-right: 30px !important;
+  }
+  .searchbox{
+      display: none;
+  }
+  #landing_bg_wrapper{
+      padding-top: 30px;
+  }
+  .bg_layer h1{
+      font-size: 1.8em !important;
+      padding-top: 20px;
+  }
+  h1.shrink{
+      margin-top: 35px !important;
+  }
+  .bg_layer img{
+      top: 42% !important;
+      width: 40% !important;
+      padding-top: 35px;    
+  }
+  .btn{
+      margin-top: 25px !important;
+  }
+  #section-b{
+      padding-top: 30px !important;
+      padding-left: 40px !important;
+  }
+  .card.main-content img{
+      height: 230px !important;
+  }
+  .just_about{
+      margin-top: 5px !important;
+  }
+  .btn.btn-success.btn-lg.showcase-btn.about_us_btn{
+      margin-top: 10px !important;
+  }
+  input.btn.btn-success.btn-lg{
+      margin-top: 5px !important;
+  }
+  a.btn.btn-outline-default.mt-5.waves-effect.waves-light{
+      margin-top: 5px !important;
+      margin-bottom: 40px !important;
+  }
+  
 }
 
-/* footer section style begins */
+/* footer section style ends */
