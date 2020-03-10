@@ -646,14 +646,14 @@ a.designed_by{
 /* Media Queries */
 
 
-@media screen and (max-width:768px){
+@media (max-width:768px){
 	#footer h5 {
     padding-left: 0;
     border-left: transparent;
     padding-bottom: 0px;
     margin-bottom: 10px;
   }
-  ul.navbar-nav.mr-auto.mainNavMenu{
+  /* ul.navbar-nav.mr-auto.mainNavMenu{
       margin-left: 30px !important;
       margin-right: 30px !important;
   }
@@ -698,7 +698,32 @@ a.designed_by{
       margin-top: 5px !important;
       margin-bottom: 40px !important;
   }
-  
+ h2.signup-screen{
+     font-size: large;
+ }
+  div#div_id_i_have_gone_through_and_accept_terms_and_condtions.form-check{
+      display: inline-block !important;
+      width: 200% !important;
+  }
+  a.forgotLnk{
+      width: 200% !important;
+      display: block;
+      padding-top: 20px;
+  }
+  input.btn.btn-outline-success.signup{
+      margin-top: 5px !important;
+      display: block !important;
+  }
+  input#id_username, input#id_password{
+      width: 140% !important;
+  }
+  .login-btn.btn.btn-success.waves-effect.waves-light{
+    min-width: 140% !important;
+    margin-top: 15px !important;
+  }
+  .signup_cta_btn.btn.waves-effect.waves-light{
+    min-width: 140% !important;
+  } */
 }
 
 /* footer section style ends */
