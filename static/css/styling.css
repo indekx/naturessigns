@@ -646,16 +646,26 @@ a.designed_by{
 /* Media Queries */
 
 
-@media (max-width:768px){
+@media screen and (max-width:768px){
 	#footer h5 {
     padding-left: 0;
     border-left: transparent;
     padding-bottom: 0px;
     margin-bottom: 10px;
   }
-  /* ul.navbar-nav.mr-auto.mainNavMenu{
+  ul.navbar-nav.mr-auto.mainNavMenu{
       margin-left: 30px !important;
       margin-right: 30px !important;
+  }
+  #footer li{
+      font-size: 11px !important;
+  }
+  #footer h5{
+      font-size: 16px;
+  }
+  p.contact{
+    font-size: 11px;
+    width: 130%;
   }
   .searchbox{
       display: none;
@@ -723,7 +733,32 @@ a.designed_by{
   }
   .signup_cta_btn.btn.waves-effect.waves-light{
     min-width: 140% !important;
-  } */
+  }
+  .col-sm-6.secondary_footer_btns.float-right{
+     display: inline-flex;
+     position: absolute;
+     margin-top: 100px;
+     margin-left: 170px;
+  }
+  a.btn.btn-outline-default.mt-5.waves-effect.waves-light{
+      font-size: 7px !important;
+  }
+  .secondary_footer{
+      min-height: 180px !important;
+  }
+  input#id_email.form-control.newsletter.emailinput.form-control{
+      width: 170% !important;
+      margin-left: 70px;
+      height: 35px !important;
+  }
+  span.newsletter-subscribe.waves-input-wrapper.waves-effect.waves-light{
+      margin-left: 236px !important;
+      height: 40px !important;
+  }
+  input.btn.btn-success.btn-lg.newsletter-subscribe{
+      padding-top: 10px !important;
+  }
+  
 }
 
 /* footer section style ends */
