@@ -5,6 +5,8 @@
 .AppleDouble
 .LSOverride
 naturessigns/settings/local.py
+static/images
+static.videos
 
 # Icon must end with two \r
 Icon
