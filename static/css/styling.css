@@ -568,7 +568,8 @@ a.policy_list{
 
 /* footer section style begins */
 #footer {
-    background: #003300 !important;
+    background: #061f06 !important;
+   
 }
 #footer h5{
 	padding-left: 10px;
@@ -576,6 +577,7 @@ a.policy_list{
     padding-bottom: 6px;
     margin-bottom: 20px;
     color:#CCCCCC;
+    text-transform: uppercase;
 }
 #footer a {
     color: #CCCCCC;
