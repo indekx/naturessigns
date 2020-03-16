@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block store %}
-      <main role="main" class="search-result" style="margin-top: 100px; margin-bottom: 70px;">
+<!-- Search results content starts -->
+      <main role="main" class="search-result" style="margin-top: 90px; background-color: ghostwhite; min-height: 100vh;">
           <div class="container">
               <div class="row mb-3">
                   {% if query %}
@@ -24,4 +25,5 @@
               </div>
           </div>
       </main>
+    <!-- Search results content ends -->
 {% endblock store %}
