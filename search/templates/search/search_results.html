@@ -1,0 +1,27 @@
+{% extends "base_file.html" %}
+{% load static %}
+
+{% block store %}
+      <main role="main" class="search-result" style="margin-top: 100px; margin-bottom: 70px;">
+          <div class="container">
+              <div class="row mb-3">
+                  {% if query %}
+                      <div class="col-12 col-md-6 py-5">
+                        {% include "search/search_form.html" %}
+                      </div>
+                      <div class="col-12 search-results">
+                          Search results for <b>"{{query}}"</b>
+                          </hr>
+                      </div>
+                  {% endif %}
+              </div>
+              <div class="row pt-4">
+                  {% for item in object_list  %}
+                    <div class="col-md-3">
+                        {% include "searches/search_card.html" %}
+                    </div>
+                  {% endfor %}
+              </div>
+          </div>
+      </main>
+{% endblock store %}

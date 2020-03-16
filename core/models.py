@@ -31,6 +31,30 @@ class Category(models.Model):
         return self.cat_name
 
 
+class ItemQuerySet(models.query.QuerySet):
+    def active(self):
+        return self.filter(active=True)
+    
+    def featured(self):
+        return self.filter(featured=True, active=True)
+    
+    def search(self, query):
+        lookups = (
+                   Q(title__icontains=query) |
+                   Q(description__icontains=query) |
+                   Q(price__icontains=query) 
+                  )
+        return self.filter(lookups).distinct()
+
+
+class ItemManager(models.Manager):
+    def get_queryset(self):
+        return ItemQuerySet(self.model, using=self._db)
+    
+    def search(self, query):
+        return self.get_queryset().search(query)
+
+
 class Item(models.Model):
 
     LABEL_CHOICES = (
@@ -47,10 +71,13 @@ class Item(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None) 
     label = models.CharField(choices=LABEL_CHOICES, max_length=15, default='select')
     description = models.TextField(blank=False, max_length=3000)
+    featured = models.BooleanField(default=False)
+    acitve = models.BooleanField(default=False)
     additional_information = models.TextField(blank=True, max_length=3000)
     slug = models.SlugField()
     date_added = models.DateTimeField(auto_now_add=True, auto_now=False)
 
+    objects = ItemManager()
 
     class Meta:
         ordering = ['-date_added']
@@ -139,4 +166,3 @@ class BillingAddress(models.Model):
 
     def __str__(self):
         return self.user.username
-    

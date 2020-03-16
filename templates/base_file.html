@@ -77,8 +77,8 @@
                                 {% include "cats/item_category.html" %}
                         {% endblock %}
                         <li class="searchbox">
-                            <form method="get">
-                                <input type="text" class="searchtext" placeholder=" Search for anything" name="q" id="_q">
+                            <form method='GET' action="{% url 'search' %}">
+                                <input type="text" class="searchtext" placeholder=" Search for anything" name="q" id="_q" value="{{erquest.Get.q}}">
                                 <a class="searchbtn mr-0" href="">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </a>

@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^articles/', include('articles.urls')),
     url(r'^business/', include('business.urls')),
     url(r'^documents/', include('documents.urls')),
+    url(r'^search/', include('search.urls')),
 ]
 
 if settings.DEBUG:
