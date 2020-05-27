@@ -26,18 +26,11 @@ from django.core.files.storage import FileSystemStorage
 from . import forms
 from .forms import CheckOutForm
 from .models import Item, Order, OrderItem, BillingAddress, Category
-from newsletter.forms import JoinNewsLetterForm
 
 # from scipy.constants.constants import slug
 
-class IndexView(CreateView):
-    template_name = 'homepage.html'
-    form_class = JoinNewsLetterForm
-    success_url = '/'
-
-    def validate_form(self, form):
-        email = form.cleaned_data.get('email')
-        return super(IndexView, self).validate_form(form)
+def index_view(request):
+    return render(request, 'index.html')
 
 
 def privacy_policy(request):

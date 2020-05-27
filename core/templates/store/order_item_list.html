@@ -1,8 +1,8 @@
-{% extends "base_file.html" %}
+{% extends "base_layout.html" %}
 {% load static %}
 
 {% block title %}
-  <title>Nature's Signs | Buy Natural Health Products and Organic Formulations with Proven Results</title>
+  <title>Nature's Signs: We Source for Organic Products with Proven Results</title>
 {% endblock %}
 
 <!-- Some meta tags-->
@@ -10,8 +10,8 @@
     <meta name="description" content="Nature's Packages and Markets Proven Natural Health Products Trusted and Used By Many">
 {% endblock %}
 
-{% block  store %}
-<section class="text-center mb-4" style="margin-top: 60px;">
+{% block  content %}
+<section class="order-items-list text-center">
     <div class="container">
         <div class="row wow fadeIn">
             {% if items %}
@@ -37,6 +37,10 @@
                               {% endif %}
                               <p>{{ item.description }}</p>
                             </div>
+                            <a href="{{ item.get_add_to_cart_url }}" class="btn btn-success btn-sm my-0 p">
+                                Add to cart
+                                <i class="fa fa-shopping-cart ml-1"></i>
+                              </a>
                         </div>
                     </div>
                 {% endif %}

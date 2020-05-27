@@ -1,4 +1,4 @@
-{% extends 'base_file.html' %}
+{% extends 'base_layout.html' %}
 
 {% load static %}
 
@@ -6,11 +6,11 @@
     <title> Nature's Signs | User Profile </title>
 {% endblock %} 
 
-{% block view_profile %}
-    <section id="profile_page" style="margin-top: 40px; padding-bottom: 35px;">
+{% block user %}
+    <section class="user-screen">
         <div class="container" >
-            <div class="row">
-                <div class="col-md-8" style="border: 1px solid rgb(245, 238, 238); border-radius: 10px;">
+            <div class="row pt-5">
+                <div class="col-md-8">
                     <br>
                     <h2>Profile Info</h2>
                     <p>Username: {{user.username}}</p>

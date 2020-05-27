@@ -24,9 +24,7 @@ urlpatterns = [
     url(r'^core/', include('core.urls')),
     url(r'^', include('core.urls')),
     url(r'^accounts/', include('accounts.urls')),
-    url(r'^appointments/', include('appointments.urls')),
     url(r'^articles/', include('articles.urls')),
-    url(r'^business/', include('business.urls')),
     url(r'^documents/', include('documents.urls')),
     url(r'^search/', include('search.urls')),
 ]

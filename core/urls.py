@@ -3,10 +3,10 @@ from django.conf.urls import url
 from django.urls import path
 from .views import OrderSummaryView, OrderCheckoutView
 from core import views
-from core.views import IndexView
+from core.views import index_view
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^$', views.index_view, name='index'),
     url(r'^about_us/$', views.about_us, name='about_us'),
     url(r'^contact_us/$', views.contact_us, name='contact_us'),
     url(r'^resources/$', views.email_subscribe, name='email_subscribe'),

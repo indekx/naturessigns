@@ -1,7 +1,7 @@
-{% extends "base_file.html" %}
+{% extends "base_layout.html" %}
 {% load static %}
 
-{% block product_details %}
+{% block content %}
     <main class="mt-5 pt-5">
         <div class="container dark-grey-text mt-5">
     
@@ -10,7 +10,7 @@
     
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
-                    <img src="{{item.image.url}}" class="img-fluid" alt="">
+                    <img src="{{item.image.url}}" class="img-fluid" alt="{{item.description}}">
                 </div>
                 <!--Grid column-->
     
@@ -39,7 +39,7 @@
     
                 <p class="lead font-weight-bold">Description</p>
     
-                <p>{{ item.description }}</p>
+                <p>{{ item.additional_information }}</p>
     
               
               <!--   <form class="d-flex justify-content-left">

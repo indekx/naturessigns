@@ -1,0 +1,82 @@
+{% load crispy_forms_tags %}
+
+<section id="footer">
+    <div class="container-fluid">
+        <div class="footer_wrapper">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h5>Quick Links</h5>
+                    <ul class="footer_items">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">FAQs</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Whitepaapers</a></li>
+                        <li><a href="">Help & Support</a></li>
+                    </ul>
+                    <p className='pl-2 footer-email'>
+                        <i class='fa fa-envelope pl-2'>
+                            <a href='mailto:hello@naturessigns.com' class='email_us pl-2'>hello@naturessigns.com</a>
+                        </i>
+                    </p>
+                    <p class='pl-2'>
+                        <i class='fa fa-phone-square'> +234 (0) 809 1029 404 </i>
+                    </p>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h5>Marketplace</h5>
+                    <ul class="footer_items">
+                        <li><a href="">Visit Our Store</a></li>
+                        <li><a href="">Sell Your Products</a></li>
+                        <li><a href="">Advertise With Us</a></li>
+                        <li><a href="">Shipping Information</a></li>
+                        <li><a href="">Join Affiliate Program</a></li>
+                        <li><a href="">Become a Distributor</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h5>Legal Policies</h5>
+                    <ul class="footer_items">
+                        <li><a href="">Terms & Conditions</a></li>
+                        <li><a href="">Returns Policy</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Cookie Tracking</a></li>
+                        <li><a href="">Disclaimers</a></li>
+                        <li><a href="">Report Abuse</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h5>Connect With Us</h5>
+                    <ul class="footer_items">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/naturessigns"><i
+                                    class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.twitter.com/naturessigns"><i
+                                    class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com/naturessigns"><i
+                                    class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="google-plus.com/naturessigns"><i
+                                    class="fa fa-google-plus"></i></a>
+                        </li>
+                    </ul>
+                    <!-- newsletter subscribe -->
+                    <form method="POST">
+                        {% csrf_token %}
+                        <!-- <div class="form-row">
+                            {{form|crispy}}
+                        </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-section">
+        <div class="copyright-wrap">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-sm-2 text-center text-white">
+                    <p class="copy">Copyright &copy Nature's Signs Ltd, 2020. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -68,7 +68,7 @@ class Item(models.Model):
     image = models.ImageField(blank=False, default=None, null=False)
     price = models.DecimalField(blank=False, null=False, default=None, max_digits=19, decimal_places=2)
     discount_price = models.DecimalField(blank=True, null=True, default=None, max_digits=19, decimal_places=2)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None) 
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
     label = models.CharField(choices=LABEL_CHOICES, max_length=15, default='select')
     description = models.TextField(blank=False, max_length=3000)
     featured = models.BooleanField(default=False)
@@ -121,11 +121,7 @@ class OrderItem(models.Model):
 
     def get_amount_saved(self):
         return self.get_total_item_price() - self.get_total_item_discount_price()
-
-    """ def get_vat(self):
-        vat_rate = Decimal('5.00') / Decimal(100)
-        purchase_amount =  """
-
+        
     def get_final_price(self):
         if self.item.discount_price:
             return self.get_total_item_discount_price()
@@ -152,6 +148,12 @@ class Order(models.Model):
         for order_item in self.items.all():
             sum_total += order_item.get_final_price()
         return sum_total
+
+    def get_vat(self):
+        return Decimal('7.50')/Decimal(100) * self.get_sum_total()
+
+    def get_amount_payable(self):
+        return self.get_sum_total() + self.get_vat()    
 
 
 class BillingAddress(models.Model):

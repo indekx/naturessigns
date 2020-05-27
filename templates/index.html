@@ -1,0 +1,139 @@
+{% extends "base_layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<section id="hero-section">
+    <div class="container-fluid">
+        <div class="hero-content-wrapper">
+            <div class="hero-content">
+                <h1>Prostate Solutions, Organic<br> and Natural Health Formulations</h1>
+                <p>Prostate grows, to excess, it can clamp down on the male reproductive system, we've effective
+                    products for shrinking enlarged prostate and managing different other illnesses naturally.</p>
+                <a class="btn explore-benefits-cta" href="{% url 'marketplace' %}">Explore & Buy</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="featured-product">
+    <div class="container-fluid"
+        style="margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important;">
+        <div class="product-highlight-card">
+            <div class="highlight-content-wrap">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 content-1">
+                        <h2>Quality Research</h2>
+                        <p>We're right with you on the pursuit of better-life and well-being, therefore, we focus on
+                            carrying out in-depth reearch that guarantees any products brought to you are naturally
+                            sourced,
+                            packed with ingredients of highest quality for your safety.
+                        </p>
+                        <a class="btn vision-mission-btn">our vision <span
+                                class="fa fa-1x fa-angle-right"></span></a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 content-2">
+                        <h2> Great Products</h2>
+                        <p>All of the products we have are of premium quality, having relied on expert research,
+                            followed by
+                            balanced combination
+                            of nutrients to ensure what you're getting is of the most potent, pure, natural, ingredients
+                            for
+                            tremendous results.
+                        </p>
+                        <a class="btn product-line-btn">Product Lines <span
+                                class="fa fa-1x fa-angle-right"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row featured-content-wrap mt-5">
+            <div class="col-md-3 col-sm-6">
+                <div class="card featured-cards">
+                    <h3 class="card-title">Individualized Care</h3>
+                    <p class="card-text">
+                        Nature's Signs renders customized solutions with remarkable results, from credible natural
+                        products, addressing diverse medical and health situations
+                    </p>
+                    <a class="btn btn-outline-success">Browse and Buy</a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card featured-cards">
+                    <h3 class="card-title">Natural Blends</h3>
+                    <p class="card-text text-center">
+                        Given the fact that human is an integral part of nature, it’s not unwise to say that the
+                        human body adapts perfectly with natural medicines, we can help you
+                    </p>
+                    <a class="btn btn-outline-success">Browse and Buy</a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card featured-cards">
+                    <h3 class="card-title">Supplements</h3>
+                    <p class="card-text text-center">
+                        Nature's Signs sources for and markets natural supplements for renown brands to handle a range
+                        of conditions, such as diet aids, intestinal health, and more
+                    </p>
+                    <a class="btn btn-outline-success">Browse and Buy</a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card featured-cards">
+                    <h3 class="card-title">Medi Treatments</h3>
+                    <p class="card-text text-center">
+                        Whether the case is preventive, curative, we're dedicated to giving you the benefit to fully
+                        recover,
+                        our ProstaRight Tea helps shrinks enlarged prostate fast
+                    </p>
+                    <a class="btn btn-outline-success">Browse and Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="buy-items">
+    <div class="items-section-wrap">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="buy_item offset-2 col-md-3">
+                    <div class="card buy-item">
+                        <img src="{% static 'images/showcase/prostaright-tea.png' %}"
+                            alt="ProstaRight Tea by Nature's Signs">
+                    </div>
+                </div>
+                <div class="offset-1 col-md-4">
+                    <div class="card product-info">
+                        <p class="card-text text-left">
+                            ProstaRight Tea is made from natural ingredients, including Prunus Africanum, Nasturtum
+                            Officinale,
+                            Curcuma Longa and more. This product contains no preservatives, and is completely Non GMO.
+                            Ideal
+                            for shrinking enlarged prostate, treating loss of libido as well prostate inflamation, and
+                            more.
+                        </p>
+                    </div>
+                    <h6 class="mt-4">Sells for <del>N</del>8,500.00 only</h6>
+                    <a class="btn btn-outline-success mt-3" href="{% url 'marketplace' %}">Order Now</a>
+                    <span class="badge badge-info ml-4">quick delivery</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id='approach'>
+    <div class="approach-wrap">
+        <div class="row">
+            <div class="col-md-6 approach-content">
+                <h1>Squeezing the Most Out <br> of Nature for Your Wellness</h1>
+                <p>Using scientifically-proved methods, we've been able to come up with natural medical solutions that
+                    address challenging health issues very fast</p>
+                <a class="btn our-approach-btn">Learn more</a>
+            </div>
+            <div class="col-md-6 approach-img">
+                <img src="{% static 'images/cards/person-holding-container-with-seaweed-2280568.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

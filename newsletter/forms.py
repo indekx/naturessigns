@@ -1,12 +1,16 @@
 from django import forms
 from .models import Join
 
-#Join newsletter form
+# Join newsletter form
+
+
 class JoinNewsLetterForm(forms.ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(
-        attrs={'placeholder': 'Get the latest newsletter and promo feeds delivered to your email', 'class': 'form-control newsletter'}
-        ), label="", max_length=254, required=True
+        attrs={'placeholder': 'Your newsletter email',
+               'class': 'form-control newsletter'}
+    ), label="", max_length=254, required=True
     )
+
     class Meta:
         model = Join
         fields = ['email']
