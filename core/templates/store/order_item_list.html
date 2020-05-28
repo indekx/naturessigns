@@ -19,7 +19,7 @@
                 {% if item.image %}
                     <!-- A Product Start -->
                     <div class="col-md-3 col-sm-3">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card">
                             <a href="{% url 'product_detail' slug=item.slug %}"><img src="{{ item.image.url }}" class="img-responsive "></a>
                             <div class="card-body text-center">
                               <strong>
@@ -47,7 +47,7 @@
             {% endfor %}
         {% else %}
             <div class="row">
-                <h4 class="offset-lg-7 col-lg-12">No product to display at this moment, kindly check back later!</h4>
+                <h4 class="offset-md-3 col-md-9">No product to display at this moment, kindly check back later!</h4>
             </div>
         {% endif %}
        </div>
