@@ -14,10 +14,10 @@
 {% block  content %}
 <section class="order-items-list text-center">
     <div class="container">
+        {% if items %}
+        {% for item in items %}
+        {% if item.image %}
         <div class="row wow fadeIn">
-            {% if items %}
-            {% for item in items %}
-            {% if item.image %}
             <!-- A Product Start -->
             <div class="col-md-3 col-sm-3">
                 <div class="card">
@@ -45,18 +45,16 @@
                     </a>
                 </div>
             </div>
-            {% endif %}
-            {% endfor %}
-            {% else %}
-            <div class="row">
-                <div class="col-sm-12 col-md-12">
-                    <div class="alert alert-info mt-5 text-center">
-                        No product to display at this moment, kindly check back later!
-                    </div>
-                </div>
-            </div>
-            {% endif %}
         </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+        <div class="col-lg-12">
+            <div class="alert alert-info mt-5 text-center">
+                No product to display at this moment, kindly check back later!
+            </div>
+        </div>
+        {% endif %}
     </div>
 </section>
 
