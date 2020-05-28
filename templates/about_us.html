@@ -2,65 +2,52 @@
 {% load static %}
 
 {% block content %}
-<section>
-    <!--Grid row-->
-    <div class="container-fluid" style="width: 100%; padding-left: 0; padding-right: 0; padding-top: 30px;">
-    <div class="row mx-1">
-
-        <!--Grid column-->
-        <div class="col-md-12 mb-4" style="padding-left: 0; padding-right: 0; width: 100%;">
-            <div class="card card-image about_page_banner">
-                <div class="about_card_text text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4" style="background-color: transparent">
-                    <div>
-                        <h2 class="card-title py-3 font-weight-bold"><strong>WHOW WE ARE</strong></h2>
-                        <a href="#vision" class="about-btn btn btn-secondary btn-rounded">Vision</a>
-                        <a href="#our_mission" class="about-btn btn btn-secondary btn-rounded"> Mission</a>
-                    </div>
-                </div>
+<section id="about_section">
+    <div class="container-fluid" style="padding-left: 0 !important;">
+        <div class="about_accordion">
+            <div class="about-img">
+                <img src="{% static 'images/cards/cat1.jpeg' %}" alt="">
             </div>
         </div>
-        <!--Grid column-->
-    </div>
-    <!--Grid row-->
     </div>
 </section>
-<section id="about_us" style="padding-top: 0; padding-bottom: 30px; margin-top: 0;">
+<section id="about_content" class="mb-5">
     <div class="container">
-        <h1>ABOUT US</h1>
-        <br>
-        <p>
+        <div class="row">
+            <div class="col-8">
+                <h1 class="about-us">ABOUT US</h1>
+        <p class="about-note">
             Welcome to Nature’s Signs Ltd, your number one source for natural and effective products for managing
             different illnesses. We're dedicated to giving you the very best of Natural products, with a flare and
             focus on quality and  efficacy, thereby inspiring you again  to live life and be in charge of your health through  the signs of nature.
         </p>
-        <p>
+        <p class="about-note">
             Founded in 2015, Natures Signs Ltd has come a long way from when the founder first started out in 
             Pharmacognosy and Phytotherapy Department, University of Port Harcourt, researching assiduously on 
             his passion for natural and effective healthy products, so that Natures Signs can offer you a competitive
             differentiator in prostate health - PROSTARight. We now serve many all over and are thrilled that we're able to 
             turn our passion into a reality for mankind to live life through the signs of nature.
         </p>
-        <p>
+        <p class="about-note">
             We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
         </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <h1 class="mission">Our Mission</h1>
+                <p class="mission-content">
+                    Nature’s Signs was founded in 2015 and employs a group of highly qualified and committed professionals. Our mission is to 
+                    help our clients take charge of their health through the use of well researched natural formulations, developed with 
+                    the help of modern technology from natural herb, fruits and spices.  We are natural, meticulously careful and daring when it’s 
+                    appropriate to get solution for our clients.
+                </p>
+            </div>
+            <div class="offset-1 col-md-5 col-sm-12">
+                <h1 class="vision">Our Vision</h1>
+                <p class="vision-content">To heal people with the help of natural pure organic substances from plants.</p>
+            </div>
+        </div>
     </div>
-</section>  
-<section style="padding-top: 0" class="mission">
-    <div id="our_mission" class="container" style=" border-top: 1px solid #000000;">
-        <br>
-        <h1>Our Mission</h1>
-        <br>
-        <p>
-            Nature’s Signs was founded in 2015 and employs a group of highly qualified and committed professionals. Our mission is to 
-            help our clients take charge of their health through the use of well researched natural formulations, developed with 
-            the help of modern technology from natural herb, fruits and spices.  We are natural, meticulously careful and daring when it’s 
-            appropriate to get solution for our clients.
-        </p>
-    </div>
-    <div id="vision" class="container">
-        <br>
-        <h1>Our Vision</h1>
-        <p>To heal people with the help of natural pure organic substances from plants.</p>
-    </div>
-</section>
+</section> 
 {% endblock %}

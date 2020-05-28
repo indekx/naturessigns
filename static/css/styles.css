@@ -306,6 +306,52 @@ section#approach {
     color: #fff !important;
 }
 
+/* About section*/
+
+section#about_section {
+    padding-top: 60px;
+}
+
+.about_accordion {
+    width: 100vw;
+}
+section#about_section img {
+    width: 100vw;
+    max-height: 370px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section#about_content {
+    padding-top: 80px;
+}
+
+h1.about-us {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+p.about-note {
+    line-height: 30px;
+    text-align: justify;
+}
+
+h1.mission, h1.vision {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 30px; 
+}
+
+p.mission-content {
+    line-height: 30px;
+    text-align: justify;
+}
+
+p.vision-content {
+    line-height: 30px;
+    text-align: justify;
+}
+
+
 /* footer section styles */
 section#footer {
     background-color: rgb(201, 194, 194);
