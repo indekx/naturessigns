@@ -11,43 +11,89 @@
         </div>
     </div>
 </section>
-<section id="about_content" class="mb-5">
+<section id="about_content">
     <div class="container">
         <div class="row">
-            <div class="col-8">
-                <h1 class="about-us">ABOUT US</h1>
-        <p class="about-note">
-            Welcome to Nature’s Signs Ltd, your number one source for natural and effective products for managing
-            different illnesses. We're dedicated to giving you the very best of Natural products, with a flare and
-            focus on quality and  efficacy, thereby inspiring you again  to live life and be in charge of your health through  the signs of nature.
-        </p>
-        <p class="about-note">
-            Founded in 2015, Natures Signs Ltd has come a long way from when the founder first started out in 
-            Pharmacognosy and Phytotherapy Department, University of Port Harcourt, researching assiduously on 
-            his passion for natural and effective healthy products, so that Natures Signs can offer you a competitive
-            differentiator in prostate health - PROSTARight. We now serve many all over and are thrilled that we're able to 
-            turn our passion into a reality for mankind to live life through the signs of nature.
-        </p>
-        <p class="about-note">
-            We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
-        </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <h1 class="mission">Our Mission</h1>
-                <p class="mission-content">
-                    Nature’s Signs was founded in 2015 and employs a group of highly qualified and committed professionals. Our mission is to 
-                    help our clients take charge of their health through the use of well researched natural formulations, developed with 
-                    the help of modern technology from natural herb, fruits and spices.  We are natural, meticulously careful and daring when it’s 
-                    appropriate to get solution for our clients.
+            <div class="col-md-7">
+                <h1 class="about-us mb-1">Who we are</h1>
+                <p class="about-note pt-2">
+                    Welcome to Nature’s Signs Ltd, your number one source for natural and effective products for
+                    managing
+                    different illnesses. We're dedicated to giving you the very best of Natural products, with a flare
+                    and
+                    focus on quality and efficacy, thereby inspiring you again to live life and be in charge of your
+                    health through the signs of nature.
+                </p>
+                <p class="about-note">
+                    Founded in 2015, Natures Signs Ltd has come a long way from when the founder first started out in
+                    Pharmacognosy and Phytotherapy Department, University of Port Harcourt, researching assiduously on
+                    his passion for natural and effective healthy products, so that Natures Signs can offer you a
+                    competitive
+                    differentiator in prostate health - PROSTARight. We now serve many all over and are thrilled that
+                    we're able to
+                    turn our passion into a reality for mankind to live life through the signs of nature.
+                </p>
+                <p class="about-note">
+                    We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions
+                    or comments, please don't hesitate to contact us.
                 </p>
             </div>
-            <div class="offset-1 col-md-5 col-sm-12">
-                <h1 class="vision">Our Vision</h1>
-                <p class="vision-content">To heal people with the help of natural pure organic substances from plants.</p>
+            <div class="offset-1 col-md-4">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'about_us' %}">About Us</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Who We Are</li>
+                    </ol>
+                </nav>
+                <div class="about-desc-img">
+                    <img src=" {% static 'images/cards/med-lab.jpeg' %}">
+                    <h5 class="pt-4">Serious Investigation</h5>
+                    <p>Nature’s Signs relies on cutting-edge ressearch and holistic thinking to come up with
+                        formulations that are highly effective, giving your money value.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</section> 
+</section>
+<section id="mission-vision-banner">
+    <div class="container">
+        <div class="mission-vision-accordion text-center">
+            <h1>We're Really Passionate </h1>
+            <h2 class="pt-2">Changing the world through natural medicines</h2>
+            <a class="btn our-mission-btn">The mission</a>
+        </div>
+        <div class="articles-and-docs">
+            <div class="row mt-5">
+                <div class="col-sm-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="articles far fa-comment-alt"></i>
+                            <h5 class="card-title">Insightful Articles</h5>
+                            <p class="card-text">Take a look at our well-furnished posts on healthy living, organic
+                                formulations
+                                and natural wellness that might be of interest to you.</p>
+                            <a href="{% url 'blog_list' %}" class="btn btn-link mb-3">Read blog</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="docs fas fa-book-open"></i>
+                            <h5 class="card-title">Interesting Whitepapers</h5>
+                            <p class="card-text">To come with products of great quality, our professionals and
+                                researchers are relentless in their findings, and the outcomes are available.</p>
+                            <a href="#" class="btn btn-link mb-3">Download docs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="collections">
+
+</section>
 {% endblock %}

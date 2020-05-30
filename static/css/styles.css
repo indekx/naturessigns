@@ -323,15 +323,49 @@ section#about_section img {
 }
 
 section#about_content {
+    margin-bottom: 60px;
+}
+
+.about-desc-img img {
+    width: 100%;
+    max-height: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-desc-img {
+    padding-top: 15px !important;
+}
+
+li.breadcrumb-item a {
+    color: #423d3d;
+}
+
+ol.breadcrumb {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.about-desc-img h5 {
+    font-weight: 700;
+}
+
+.about-desc-img p {
+    line-height: 25px;
+}
+
+section#about_content {
     padding-top: 80px;
 }
 
 h1.about-us {
     font-size: 1.5rem;
     font-weight: 700;
+    text-transform: capitalize;
+    color: rgb(52, 170, 101);
 }
 p.about-note {
-    line-height: 30px;
+    line-height: 25px;
     text-align: justify;
 }
 
@@ -339,6 +373,7 @@ h1.mission, h1.vision {
     font-size: 1.5rem;
     font-weight: 700;
     margin-top: 30px; 
+    color: rgb(52, 170, 101);
 }
 
 p.mission-content {
@@ -351,6 +386,83 @@ p.vision-content {
     text-align: justify;
 }
 
+/* mission and vision begins */
+section#mission-vision-banner {
+    background-color: rgb(4, 44, 4);
+    max-height: 400px;
+}
+
+.mission-vision-accordion.text-center {
+    padding-top: 80px;
+}
+
+.mission-vision-accordion.text-center h1 {
+    color: rgb(236, 231, 231);
+    font-weight: 900;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.mission-vision-accordion.text-center h2 {
+    color: rgb(184, 179, 179);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+a.btn.our-mission-btn {
+    background-color: rgb(52, 170, 101);
+    border: 1px;
+    border-radius: 10px !important;
+    margin-top: 35px;
+    color: rgb(228, 222, 222);
+    width: 170px;
+    height: 45px;
+    padding-top: 10px;
+}
+
+a.btn.our-mission-btn:hover {
+    background: rgb(219, 215, 215);
+    color: rgb(52, 170, 101);
+}
+/* vision ends */
+
+/* docs */
+.articles-and-docs {
+    background-color: #fff !important;
+    margin-top: 60px;
+    min-height: 400px;
+    z-index: 2;
+}
+
+.articles-and-docs h5 {
+    font-weight: 600;
+}
+
+.articles-and-docs p {
+    line-height: 25px;
+}
+
+.articles.far.fa-comment-alt, .docs.fas.fa-book-open {
+    font-size: 60px;
+    padding-top: 45px;
+    margin-bottom: 30px;
+    color: rgb(52, 170, 101);
+}
+
+.articles-and-docs a, .articles-and-docs a:hover {
+    color: rgb(52, 170, 101);
+}
+
+/* main articles */
+main.article_list {
+    padding-top: 120px;
+}
+
+/* collections section */
+section.collections {
+    min-height: 350px;
+    background: transparent;
+}
 
 /* footer section styles */
 section#footer {
