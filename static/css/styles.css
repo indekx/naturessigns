@@ -430,12 +430,14 @@ a.btn.our-mission-btn:hover {
 }
 /* vision ends */
 
-/* docs */
+/* docs Begins */
 .articles-and-docs {
     background-color: #fff !important;
     margin-top: 60px;
     min-height: 400px;
     z-index: 2;
+    border-top: 1px;
+    border-radius: 5px;
 }
 
 .articles-and-docs h5 {
