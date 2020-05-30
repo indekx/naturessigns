@@ -351,7 +351,8 @@ ol.breadcrumb {
 }
 
 .about-desc-img p {
-    line-height: 25px;
+    line-height: 30px;
+    color: #777;
 }
 
 section#about_content {
@@ -365,8 +366,9 @@ h1.about-us {
     color: rgb(52, 170, 101);
 }
 p.about-note {
-    line-height: 25px;
+    line-height: 30px;
     text-align: justify;
+    color: #777;
 }
 
 h1.mission, h1.vision {
@@ -379,11 +381,13 @@ h1.mission, h1.vision {
 p.mission-content {
     line-height: 30px;
     text-align: justify;
+    color: #777;
 }
 
 p.vision-content {
     line-height: 30px;
     text-align: justify;
+    color: #777;
 }
 
 /* mission and vision begins */
@@ -439,7 +443,8 @@ a.btn.our-mission-btn:hover {
 }
 
 .articles-and-docs p {
-    line-height: 25px;
+    line-height: 27px;
+    color: #777;
 }
 
 .articles.far.fa-comment-alt, .docs.fas.fa-book-open {
