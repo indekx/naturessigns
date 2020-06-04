@@ -306,6 +306,305 @@ section#approach {
     color: #fff !important;
 }
 
+/* About section*/
+
+section#about_section {
+    padding-top: 60px;
+}
+
+.about_accordion {
+    width: 100vw;
+}
+section#about_section img {
+    width: 100vw;
+    max-height: 370px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section#about_content {
+    margin-bottom: 60px;
+}
+
+.about-desc-img img {
+    width: 100%;
+    max-height: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-desc-img {
+    padding-top: 15px !important;
+}
+
+li.breadcrumb-item a {
+    color: #423d3d;
+}
+
+ol.breadcrumb {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.about-desc-img h5 {
+    font-weight: 700;
+}
+
+.about-desc-img p {
+    line-height: 30px;
+    color: #777;
+}
+
+section#about_content {
+    padding-top: 80px;
+}
+
+h1.about-us {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: rgb(52, 170, 101);
+}
+p.about-note {
+    line-height: 30px;
+    text-align: justify;
+    color: #777;
+}
+
+h1.mission, h1.vision {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 30px; 
+    color: rgb(52, 170, 101);
+}
+
+p.mission-content {
+    line-height: 30px;
+    text-align: justify;
+    color: #777;
+}
+
+p.vision-content {
+    line-height: 30px;
+    text-align: justify;
+    color: #777;
+}
+
+/* mission and vision begins */
+section#mission-vision-banner {
+    background-color: rgb(4, 44, 4);
+    max-height: 400px;
+}
+
+.mission-vision-accordion.text-center {
+    padding-top: 80px;
+}
+
+.mission-vision-accordion.text-center h1 {
+    color: rgb(236, 231, 231);
+    font-weight: 900;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.mission-vision-accordion.text-center h2 {
+    color: rgb(184, 179, 179);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+a.btn.our-mission-btn {
+    background-color: rgb(52, 170, 101);
+    border: 1px;
+    border-radius: 10px !important;
+    margin-top: 35px;
+    color: rgb(228, 222, 222);
+    width: 170px;
+    height: 45px;
+    padding-top: 10px;
+}
+
+a.btn.our-mission-btn:hover {
+    background: rgb(219, 215, 215);
+    color: rgb(52, 170, 101);
+}
+/* vision ends */
+
+/* docs Begins */
+.articles-and-docs {
+    background-color: #fff !important;
+    margin-top: 60px;
+    min-height: 400px;
+    z-index: 2;
+    border-top: 1px;
+    border-radius: 5px;
+}
+
+.articles-and-docs h5 {
+    font-weight: 600;
+}
+
+.articles-and-docs p {
+    line-height: 27px;
+    color: #777;
+}
+
+.articles.far.fa-comment-alt, .docs.fas.fa-book-open {
+    font-size: 60px;
+    padding-top: 45px;
+    margin-bottom: 30px;
+    color: rgb(52, 170, 101);
+}
+
+.articles-and-docs a, .articles-and-docs a:hover {
+    color: rgb(52, 170, 101);
+    font-weight: 900;
+}
+
+.articles-and-docs a:hover {
+    text-transform: uppercase;
+}
+
+/* latest article list begins */
+section.article-list-page {
+    min-height: 350px;
+    margin-top: 85px;
+    background: url(../images/showcase/concept-of-covid-19.jpg) no-repeat center center fixed;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
+}
+
+.article-list-hero {
+    padding-top: 90px;
+}
+
+.article-list-hero-content h3 {
+    font-weight: 700;
+    color: azure;
+}
+
+.article-content-wrap {
+    margin-top: 60px;
+    padding-bottom: 60px;
+}
+
+a.card-title.article-title-link {
+    color: rgb(58, 57, 57);
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    font-weight: 500;
+    transform: skew(-10deg);
+    margin-bottom: 0;
+}
+
+.article-content-wrap a:hover {
+    color: rgb(52, 170, 101);
+}
+
+.article-content-wrap img {
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+}
+
+.article-content-wrap p {
+    margin-top: 30px;
+    line-height: 30px;
+    color: #777;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.card.all_articles_card {
+    border: 0;
+    border-radius: 0;
+}
+
+.article-content {
+    background: rgb(248, 245, 245);
+}
+
+section#article_detail {
+    margin-top: 120px;
+    margin-bottom: 60px;
+}
+
+.card.article-detail {
+    border: 0;
+    border-radius: 0;
+}
+
+.articles-cols.col-md-4.text-center {
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+    margin-bottom: 30px !important;
+}
+
+.card.article-detail h5 {
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    border-top: 2px solid rgb(52, 170, 101);
+    padding-top: 30px;
+    font-size: 1.7em;
+    text-align: center;
+}
+
+section#article_detail img {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 45px;
+    padding-top: 30px;
+}
+
+.card.article-detail p {
+    line-height: 25px;
+}
+
+.articles-detail-sidebar h4 {
+    color: rgb(17, 117, 59);
+    font-size: 1.2em;
+}
+
+ul.list-group.articles-detail-sidebar {
+    border-top: 2px solid rgb(52, 170, 101);
+    border-bottom: 1px solid rgb(52, 170, 101);
+    border-radius: 5px;
+}
+
+a.paginate-articles{
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+a.paginate-articles:hover {
+    color: #fff;
+}
+
+.row.paginated {
+    border-top: 1px dashed #777;
+    margin-top: 45px;
+}
+
+.col-md-3.articles-right-sidebar {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+/* latest article list ends  */
+
+
+/* collections section */
+section.collections {
+    min-height: 350px;
+    background: transparent;
+}
+
 /* footer section styles */
 section#footer {
     background-color: rgb(201, 194, 194);
