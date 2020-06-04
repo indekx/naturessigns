@@ -12,7 +12,7 @@ class Article(models.Model):
     slug = models.SlugField(blank=True, unique=True)
     content = models.CharField(max_length=250, null=False, blank=False)
     detail = models.TextField(null=False, blank=False, max_length=2500)
-    
+    image = models.ImageField(blank=True, null=True) 
 
     def __str__ (self):
         return self.title

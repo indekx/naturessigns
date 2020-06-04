@@ -17,17 +17,17 @@ from . import forms
 # Create your views here.
 class ArticleListView(ListView):
     model = Article
-    template_name = 'blog/view_blog.html'
+    template_name = 'blog/article_list.html'
     context_object_name = 'articles'
     ordering = ['-date']
-    paginate_by = 5
+    paginate_by = 3
 
 
 class CurrentUserArticleListView(ListView):
     model = Article
     template_name = 'blog/user_blog_posts.html'
     context_object_name = 'articles'
-    paginate_by = 5
+    paginate_by = 3
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
@@ -36,11 +36,17 @@ class CurrentUserArticleListView(ListView):
 
 class ArticleDetailView(DetailView):
     queryset = Article.objects.all() # Same as using 'model' which is 'Article'
-    template_name = 'blog/blog_detail.html'
+    template_name = 'blog/article_detail.html'
 
     def get_object(self):
         slug = self.kwargs.get('slug')
         return get_object_or_404(Article, slug=slug)
+    
+    def get_latest_articles(self, **kwargs):
+        latest_articles = super().get_latest_articles(**kwargs)
+        latest_articles['articles'] = Article.objects.filter().order_by('-date')
+        return latest_articles
+
 
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
