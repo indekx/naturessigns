@@ -26,6 +26,19 @@ ul.navbar-nav.left {
     font-weight: 700;
 }
 
+button.search-btn {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0;
+    background: rgb(247, 245, 245);
+}
+
+.form-control.mr-md-2.nav-search-box{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background: rgb(247, 245, 245);
+    font-size: 13px;
+}
+
 .signup-btn,.login-btn {
     padding-top: 5px;
     padding-bottom: 5px;

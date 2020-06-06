@@ -1,4 +1,4 @@
-<form class="form-inline  my-2-lg-0 ml-0 pl-0 search-box2" method="GET" action="{% url 'search' %}" >
-    <input class="form-control mr-sm-2" type="search" placeholder="Quickly Change Your Search Criteria" aria-label="Search" name="q" id="_q" value="{{erquest.Get.q}}" style="width: 31vw !important; border-radius: 0 !important; margin-right: 0 !important;">
-    <button class="search-btn btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-left: 0 !important;">Search</button>
+<form class="navbar-search-form form-inline  my-2-lg-0 ml-0 pl-5 " method="GET" action="{% url 'search' %}" >
+    <input class="form-control mr-md-2 nav-search-box" type="search" placeholder="Search for anything" aria-label="Search" name="q" id="_q" value="{{erquest.Get.q}}" style="width: 20vw !important; border-radius: 10 !important; margin-right: 0 !important;">
+    <button class="search-btn btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
 </form>

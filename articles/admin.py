@@ -1,8 +1,24 @@
 from django.contrib import admin
-from .models import Article
+from django.contrib.auth.models import User
+from . import models 
 
 
-admin.site.register(Article)
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("cat_name",)}
+
+
+class CategoryToArticleInline(admin.TabularInline):
+    model = models.CategoryToArticle
+    extra = 1
+
+
+class ArticleAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+    inlines = [CategoryToArticleInline]
+
+
+admin.site.register(models.Article, ArticleAdmin)
+admin.site.register(models.Category, CategoryAdmin)
 
 
 

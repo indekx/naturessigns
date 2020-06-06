@@ -51,6 +51,7 @@
                         <a href="{% url 'blog_list' %}" class="nav-link hire-us">Blog</a>
                     </li>
                 </ul>
+                {% include "search/search_form.html" %}
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a href="{% url 'order_summary' %}"><i class='fa fa-shopping-cart pt-3'

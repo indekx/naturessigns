@@ -1,19 +1,13 @@
-{% extends "base_file.html" %}
-{% load static %}
+{% extends "base_layout.html" %}
 
-{% block store %}
+{% block content %}
 <!-- Search results content starts -->
-      <main role="main" class="search-result" style="margin-top: 90px; background-color: ghostwhite; min-height: 80vh;">
+      <main role="main" class="search-result">
           <div class="container">
               <div class="row mb-3">
                   {% if query %}
-                      <div class="col-12 col-md-6 py-5">
-                        {% include "search/search_form.html" %}
-                      </div>
-                      <div class="col-12 search-results">
-                          Search results for <b>"{{query}}"</b>
-                          </hr>
-                      </div>
+                    Search results for <b>"{{query}}"</b>
+                        </hr>
                   {% endif %}
               </div>
               <div class="row pt-4">
@@ -25,5 +19,5 @@
               </div>
           </div>
       </main>
-    <!-- Search results content ends -->
-{% endblock store %}
+<!-- Search results content ends -->
+{% endblock %}

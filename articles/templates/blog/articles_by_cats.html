@@ -1,27 +1,19 @@
 {% extends "base_layout.html" %}
 
 {% block articles %}
-
-<section class="article-list-page">
-    <div class="container-fluid">
-        <div class="article-list-hero">
-            <div class="article-list-hero-content text-center">
-                <h3>COVID-19 is highly contageous, kindly follow saftety advice from experts</h3>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="all-articles">
-    <div class="container">
-        <div class="article-content-wrap">
-            <div class="row">
+  <section class="articles-by-categories">
+      <div class="container-fluid">
+          <div class="article-content-wrap">
+              <div class="row">
                 {% if articles %}
+                <h3>Articles matching {{category.cat_name}}</h3>
                 <div class="col-md-9">
                      <div class="row">
                         {% for article in articles  %}
                             {% if article.title %}
                                 <div class="articles-cols col-md-4 text-center">
                                     <div class="card all_articles_card">
+                                        <h5>{{article.category}}</h5>
                                         <a href="{% url 'article_detail' slug=article.slug %}"
                                             class="card-title article-title-link">{{article.title}}
                                         </a>
@@ -64,9 +56,8 @@
                         No articles at this moment, you may please check back later!
                     </div>
                 {% endif%}
-        </div>
-        {% include "blog/article_sidebar.html" %}
-    </div>
-</section>
-
+              </div>
+          </div>
+      </div>
+  </section>
 {% endblock %}
