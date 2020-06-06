@@ -7,20 +7,17 @@ from django.utils import timezone
 
 
 class Category(models.Model):
-    cat_name = models.CharField(max_length=160)
-    slug = models.SlugField(blank=True, null=True, unique=True, max_length=250)
+    title = models.CharField(max_length=160)
+    slug = models.SlugField(blank=True, null=True,unique=True, max_length=160)
     description = models.TextField(blank=True, null=True)
     
     class Meta:
-        ordering = ('cat_name',)
+        ordering = ('title',)
         verbose_name = 'category'
         verbose_name_plural = 'categories'
 
-    def get_absolute_url(self):
-        return "/categories/%s/" % self.slug
-
     def __str__(self):
-        return self.cat_name
+        return self.title
 
 
 class Article(models.Model):
@@ -31,16 +28,13 @@ class Article(models.Model):
     content = models.CharField(max_length=250, null=False, blank=False)
     detail = models.TextField(null=False, blank=False, max_length=2500)
     image = models.ImageField(blank=True, null=True)
-    categories = models.ManyToManyField(Category, blank=True, through='CategoryToArticle') 
+    category = models.ForeignKey(Category, blank=True, 
+        on_delete=models.CASCADE, 
+        null=True, default=None
+    ) 
 
     def __str__ (self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('blog_list')
-
-
-class CategoryToArticle(models.Model):
-    article = models.ForeignKey(Article, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    date_created = models.DateTimeField(auto_now_add=True, auto_now=False)

@@ -5,8 +5,10 @@ from .views import (
     ArticleCreateView,
     ArticleUpdateView,
     DeleteArticleView,
-    CurrentUserArticleListView
+    CurrentUserArticleListView,
+    articles_by_category
 )
+
 from articles import views
 
 urlpatterns = [
@@ -16,4 +18,5 @@ urlpatterns = [
     url(r'^(?P<slug>[\w-]+)/$', ArticleDetailView.as_view(), name='article_detail'),
     url(r'^(?P<slug>[\w-]+)/update/$', ArticleUpdateView.as_view(), name='article_update'),
     url(r'^(?P<slug>[\w-]+)/delete/$', DeleteArticleView.as_view(), name='article_delete'),
+    url(r'^category/(?P<slug>[\w-]+)/$', articles_by_category, name='articles_by_category'),
 ]

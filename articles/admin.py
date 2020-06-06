@@ -4,18 +4,14 @@ from . import models
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("cat_name",)}
-
-
-class CategoryToArticleInline(admin.TabularInline):
-    model = models.CategoryToArticle
-    extra = 1
+    prepopulated_fields = {"slug": ("title",)}
+    list_display = ('title', 'slug')
 
 
 class ArticleAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
-    inlines = [CategoryToArticleInline]
-
+    search_fields = ('title', 'content')
+    
 
 admin.site.register(models.Article, ArticleAdmin)
 admin.site.register(models.Category, CategoryAdmin)

@@ -76,6 +76,9 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;    
 }
 
+select:focus {
+    box-shadow: none;
+  }
 /* Bootstrap container fluid styles */
 .container-fluid {
     padding-right: 30px !important;

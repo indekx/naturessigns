@@ -22,6 +22,9 @@
                             {% if article.title %}
                                 <div class="articles-cols col-md-4 text-center">
                                     <div class="card all_articles_card">
+                                        <a href="{% url 'articles_by_category' slug=article.slug %}"
+                                            class="card-title article-title-link">{{article.category}}
+                                        </a>
                                         <a href="{% url 'article_detail' slug=article.slug %}"
                                             class="card-title article-title-link">{{article.title}}
                                         </a>

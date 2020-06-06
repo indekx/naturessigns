@@ -8,6 +8,10 @@
                   {% if query %}
                     Search results for <b>"{{query}}"</b>
                         </hr>
+                    {% else %}
+                    <div class="text text-center pt-5">
+                        <h3>Search did not find anything to match </h3>
+                    </div>
                   {% endif %}
               </div>
               <div class="row pt-4">

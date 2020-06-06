@@ -44,31 +44,16 @@ class ArticleDetailView(DetailView):
         return get_object_or_404(Article, slug=slug)
 
 
-def article_by_category(request, category_slug, selected_page=1):
-    # Get specified category
-    articles = Article.objects.all().order_by('-date')
-    category_articles = []
-    for article in articles:
-        if article.categories.filter(slug=category_slug):
-            category_articles.append(article)
-    # Paginate the categories
-    by_cat_pages = Paginator(articles, 5)
-    # Get articles by categories
-    get_articles_by_cats = Category.objects.filter(slug=category_slug)[0]
-    # Get specified page
-    try:
-        returned_cat_page = by_cat_pages.by_cat_page(selected_page)
-    except  EmptyPage:
-        returned_cat_page = get_articles_by_cats.by_cat_page(by_cat_pages.num_by_cat_pages)
-    # Display all the articles
-    return render(request, 'blog/articles_by_cats.html', {
-            'articles': returned_cat_page.object_list,
-            'by_cat_page': returned_cat_page,
-            'get_articles_by_cats': get_articles_by_cats
-        }
-    )
-
-
+def articles_by_category(request, slug):
+    template_name = 'blog/articles_by_cats.html'
+    category = get_object_or_404(Category, slug=slug)     # Get each category
+    article = Article.objects.filter(category=category)   # Get articles related to each category
+    cat_context_data = {
+        'category': category,
+        'article': article,
+    }
+    return render(request, template_name, cat_context_data)
+    
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
