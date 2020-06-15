@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
 html, body {
     overflow-x: hidden;
@@ -59,6 +59,15 @@ a.dropdown-item.user-dropdown {
     line-height: 25px;
 }
 
+.btn-group.ml-3:hover>.dropdown-menu {
+    display: block !important;
+    margin-top: 0;
+  }
+  
+  .btn-group.ml-3>.dropdown-toggle:active {
+    pointer-events: none;
+  }
+
 .orders-btn.nav-link.nav-btn.btn.btn-outline-dark.mt-2 {
     text-transform: capitalize !important;
     background: none;
@@ -76,6 +85,14 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;    
 }
 
+.navbar-nav .dropdown-menu{
+    float: left !important;
+    left: -50%;
+}
+
+select:focus {
+    box-shadow: none;
+  }
 /* Bootstrap container fluid styles */
 .container-fluid {
     padding-right: 30px !important;
@@ -505,6 +522,14 @@ section.article-list-page {
     padding-bottom: 60px;
 }
 
+a.card-title.article-by-category-link {
+    text-transform: uppercase;
+    color: rgb(110, 108, 108);
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
 a.card-title.article-title-link {
     color: rgb(58, 57, 57);
     text-align: center;
@@ -539,7 +564,7 @@ a.card-title.article-title-link {
 }
 
 .article-content {
-    background: rgb(248, 245, 245);
+    background: transparent;
 }
 
 section#article_detail {
@@ -608,7 +633,6 @@ a.paginate-articles:hover {
     padding-right: 30px;
 }
 
-
 /* latest article list ends  */
 
 
@@ -659,14 +683,13 @@ section#footer h5 {
     font-weight: 800;
 }
 
-i.fa.fa-phone-square::before {
-   padding-right: 5px;
-   font-weight: 700;
-   font-size: 12px;
+i.fa.fa-phone-square, i.fab.fa-whatsapp {
+    font-size: 13px;
+    font-weight: 700;
 }
 
-i.fa.fa-phone-square {
-    font-size: 13px;
+i.fa.fa-phone-square::before, i.fab.fa-whatsapp::before {
+   padding-right: 5px;
 }
 
 .fa-envelope::before{
@@ -787,3 +810,5 @@ i.fa.fa-plus, i.fa.fa-minus {
     font-size: 10px;
 }
 /* Order items ends */
+
+
