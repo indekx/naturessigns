@@ -13,6 +13,7 @@
 <section class="all-articles">
     <div class="container">
         <div class="article-content-wrap">
+            <h5>Articles for {{article_category.title}}</h5>
             <div class="row">
                 {% if articles %}
                 <div class="col-md-9">
@@ -21,10 +22,6 @@
                         {% if article.category and article.image %}
                         <div class="articles-cols col-md-4 text-center">
                             <div class="card all_articles_card">
-                                <a href="{{article.category.get_articles_by_cat_url}}"
-                                    class="card-title article-by-category-link">
-                                    {{article.category}}
-                                </a> 
                                 <a href="{% url 'article_detail' slug=article.slug %}"
                                     class="card-title article-title-link">{{article.title}}
                                 </a>

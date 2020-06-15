@@ -15,12 +15,26 @@ from django.contrib.auth.decorators import login_required
 from . import forms
 
 
-# Create your views here.
+# Articles by category.
+def ArticlesByCat(request, cat_slug):
+    categories = Category.objects.all()
+    article_items = Article.objects.filter(status='published')
+    # If the cat_slug is returned in url, we want to get the proper category
+    if cat_slug:
+        article_category = get_object_or_404(Category, slug=cat_slug)
+        cat_articles = article_items.filter(category=article_category)
+    template = 'category/article_list_by_cat.html'
+    context = {'categories': categories,'article_category': article_category,
+        'cat_articles': cat_articles
+    }
+    return render(request, template, context)
+
+
 class ArticleListView(ListView):
     model = Article
     template_name = 'blog/article_list.html'
     context_object_name = 'articles'
-    ordering = ['-date']
+    ordering = ['-created_on']
     paginate_by = 3
 
 
@@ -41,19 +55,8 @@ class ArticleDetailView(DetailView):
 
     def get_object(self):
         slug = self.kwargs.get('slug')
-        return get_object_or_404(Article, slug=slug)
-
-
-def articles_by_category(request, slug):
-    template_name = 'blog/articles_by_cats.html'
-    category = get_object_or_404(Category, slug=slug)     # Get each category
-    article = Article.objects.filter(category=category)   # Get articles related to each category
-    cat_context_data = {
-        'category': category,
-        'article': article,
-    }
-    return render(request, template_name, cat_context_data)
-    
+        return get_object_or_404(Article, slug=slug)  
+   
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article

@@ -9,6 +9,8 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_by', 'published', 'status','category')
+    list_filter = ('status', 'created_on', 'published', 'created_by', 'category')
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ('title', 'content')
     
