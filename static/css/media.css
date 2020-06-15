@@ -1,5 +1,119 @@
 /* Navbar */
 
+@media only screen and (max-width: 1060px) {
+    .navbar-search-form {
+        max-width: 200px !important;   
+    }
+    .search-btn {
+        display: none;
+    }
+    .form-control.mr-md-2.nav-search-box{
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .hero-content h1 {
+        width: auto;
+    }
+
+    .hero-content p {
+        width: 80%;
+    }
+
+    .col-md-6.approach-content h1 {
+        font-size: 2em;
+    }
+
+    .btn.our-approach-btn {
+        margin-bottom: 60px;
+    }
+
+    .col-md-6.approach-content p {
+        font-size: 1rem;
+    }
+
+    .col-md-6.approach-img img {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .card.buy-item img {
+        max-height: 320px;
+        width: fit-content;
+    }
+
+    .btn.vision-mission-btn {
+        margin-left: 0 !important;
+        padding-left: 0;
+    }
+
+    .btn.product-line-btn {
+        margin-left: 70px !important;
+    }
+
+    .highlight-content-wrap {
+        padding-bottom: 45px;
+    }
+
+    .card.featured-cards {
+        margin-top: 50px;
+    }
+
+    /* signup screen */
+    a.forgot_passwor_link.ml-4{
+        margin-left: 15px !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .navbar-search-form{
+        padding-left: 10px !important;
+        width: 90px !important;
+    }
+
+    ul.navbar-search-form {
+        height: 10px;
+    }
+
+    ul.navbar-nav a {
+        font-size: 0.7rem;
+    }
+
+    .form-control.mr-md-2.nav-search-box {
+        padding-bottom: 0;
+        padding-top: 0;
+        line-height: 10px;
+    }
+
+    a.login-btn {
+        margin-right: 12px !important;
+        margin-left: 12px !important;
+    }
+
+    .hero-content-wrapper {
+        padding-top: 110px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .col-sm-12.col-md-6.content-2 h2{
+        margin-left: 40px;
+    }
+
+    .col-sm-12.col-md-6.content-1 h2,.col-sm-12.col-md-6.content-2 h2 {
+        font-size: 1.6rem;
+    }
+    a.btn.product-line-btn {
+        margin-left: 30px !important;
+    }
+
+    .col-sm-12.col-md-6.content-2 p{
+        margin-left: 40px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     ul.navbar-nav a {
         display: block;
