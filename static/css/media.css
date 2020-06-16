@@ -118,21 +118,32 @@
     .navbar-search-form {
         display: none;
     }
+    section.collections {
+        min-height: 430px;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    a.navbar-brand img {
+        width: 150px;
+    }
     ul.navbar-nav a {
         display: block;
     }
     .navbar-search-form{
-        display: inline-block;
-        width: 100% !important;
+        display: none;
+        width: 100px !important;
         padding-left: 0 !important;
         padding-top: 25px; 
         padding-bottom: 25px;
     }
-    ul.navbar-nav.ml-auto{
-        display: block !important;
+    ul.navbar-nav.ml-auto li.nav-item{
+        display: inline !important;
+        padding-left: 13px;
+    }
+
+    a.signup-btn {
+        margin-top: 9px;
     }
     a.login-btn.nav-link.nav-btn.btn.btn-success.mr-4.ml-4 {
         margin-left: 0 !important; 
@@ -178,5 +189,46 @@
     .col-md-6.approach-img img {
         float: left;
     }
+
+    /* About section */
+    section.collections {
+        min-height: 400px;
+    }
+
+    .offset-1.col-md-4.about-right {
+        margin-left: 15px;
+        margin-top: 30px;
+    }
+
+    .col-md-6.col-sm-12.user-input {
+        width: 100%;
+    }
+    label.form-check-label.requiredField, a.forgot_passwor_link {
+        font-size: 13px;
+    }
+
+    h3.new-signup {
+        font-size: 1.5rem;
+    }
+
+    input.btn.btn-outline-success.signup {
+        padding: 3px 8px;
+    }
 }
 
+@media screen and (max-width: 600px) {
+    section.collections {
+        min-height: 880px;
+    }
+
+    .mission-vision-accordion.text-center {
+        min-height: 400px;
+    }
+    .col-sm-6.docx.download {
+        padding-top: 30px;
+    }
+
+    .offset-1.col-md-4.about-right {
+        margin-left: 15px;
+    }
+}
