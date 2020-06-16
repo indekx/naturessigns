@@ -231,4 +231,7 @@
     .offset-1.col-md-4.about-right {
         margin-left: 15px;
     }
+    section#mission-banner {
+        margin-bottom: 800px;
+    }
 }

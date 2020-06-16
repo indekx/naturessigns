@@ -56,6 +56,12 @@ def return_policy(request):
 def about_us(request):
     return render(request, 'about_us.html')
 
+
+# About our mission
+def our_mission(request):
+    return render(request, 'mission.html')
+    
+
 # @login_required(login_url='/accounts/login/')
 def email_subscribe(request):
     post_data = request.POST.copy()

@@ -1,0 +1,51 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+
+<section id="mission-banner">
+    <div class="container-fluid">
+        <div class="mission-page-accordion text-center">
+            <h1>Of the truth... </h1>
+            <h2 class="pt-2">All we're about is better living</h2>
+            <a class="btn our-mission-btn">success stories</a>
+        </div>
+        <div class="articles-and-docs">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'about_us' %}">About Us</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Our Mission & Values</li>
+                </ol>
+            </nav>
+            <div class="row mt-5">
+                <div class="col-sm-6 docx">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="articles fas fa-diagnoses"></i>
+                            <h5 class="card-title">Our Mission</h5>
+                            <p class="card-text mb-4">Our mission is to help our clients take charge of their health through
+                                the use of well researched natural formulations developed through with the help of
+                                modern technology from natural herb, fruits and spices. We are natural, meticulously
+                                careful and daring when it’s appropriate to get solution for our teaming clients.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 docx download">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="docs fas fa-file-medical"></i>
+                            <h5 class="card-title">Our Core Values</h5>
+                            <p class="card-text mb-4">We are at the forefront of natural health research and innovations, giving our
+                                esteemed customers real values for their moneys through products of superior quality. Nature's Signs is packed with
+                                a strong team of dedicated professionals who work together to bring synergy and creativity for customers satisfaction and 
+                                personal fulfilment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

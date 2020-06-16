@@ -495,6 +495,33 @@ a.btn.our-mission-btn:hover {
     text-transform: uppercase;
 }
 
+/* Main mission section */
+section#mission-banner {
+    background-color: black;
+    height: 550px;
+    margin-top: 80px;
+    margin-bottom: 370px;
+}
+
+.mission-page-accordion {
+    padding-top: 90px;
+}
+
+section#mission-banner h1 {
+    color: #fff;
+}
+
+section#mission-banner h2 {
+    color: rgb(255, 247, 247);
+}
+
+i.articles.fas.fa-diagnoses, .docs.fas.fa-file-medical {
+    font-size: 60px;
+    padding-top: 45px;
+    margin-bottom: 30px;
+    color: rgb(52, 170, 101);
+}
+
 /* latest article list begins */
 section.article-list-page {
     min-height: 350px;
