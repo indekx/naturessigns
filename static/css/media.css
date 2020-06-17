@@ -214,6 +214,14 @@
     input.btn.btn-outline-success.signup {
         padding: 3px 8px;
     }
+
+    .offset-3.col-sm-9.contact-us {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    section.contact_us h2 {
+        font-size: 1.3rem;
+    }
 }
 
 @media screen and (max-width: 600px) {

@@ -60,6 +60,37 @@ def about_us(request):
 # About our mission
 def our_mission(request):
     return render(request, 'mission.html')
+
+
+#Contact us view
+def contact_us(request):
+    form = forms.ContactUsForm(request.POST or None)
+    if form.is_valid():
+        form_first_name = form.cleaned_data.get('first_name')
+        form_last_name = form.cleaned_data.get('last_name')
+        form_contact_email = form.cleaned_data.get('contact_email')
+        form_message = form.cleaned_data.get('message')
+        form_full_name = form_first_name + ' ' + form_last_name
+
+        subject = 'Contact Email Received from a Visitor'
+        from_email = settings.DEFAULT_FROM_EMAIL
+        to_email = ['from_email']
+        contact_message = ''' 
+        %s: %s via %s 
+        '''%(form_full_name,
+            form_message,
+            form_contact_email
+        )
+
+        send_mail(
+            subject, contact_message, from_email,
+            to_email, fail_silently=False
+        )
+
+        return redirect('index')
+    
+    return render(request, 'contact_us.html', {'form': form})
+
     
 
 # @login_required(login_url='/accounts/login/')
@@ -104,36 +135,6 @@ def add_product(request):
     else:
         form = forms.AddProduct()
     return render(request, 'products_list/add_product.html', {'form': form})
-
-
-#Contact us view
-def contact_us(request):
-    form = forms.ContactUsForm(request.POST or None)
-    if form.is_valid():
-        form_first_name = form.cleaned_data.get('first_name')
-        form_last_name = form.cleaned_data.get('last_name')
-        form_contact_email = form.cleaned_data.get('contact_email')
-        form_message = form.cleaned_data.get('message')
-        form_full_name = form_first_name + ' ' + form_last_name
-
-        subject = 'Contact Email Received from a Visitor'
-        from_email = settings.DEFAULT_FROM_EMAIL
-        to_email = ['from_email']
-        contact_message = ''' 
-        %s: %s via %s 
-        '''%(form_full_name,
-            form_message,
-            form_contact_email
-        )
-
-        send_mail(
-            subject, contact_message, from_email,
-            to_email, fail_silently=False
-        )
-
-        return redirect('index')
-    
-    return render(request, 'contact_us.html', {'form': form})
 
 
 def order_item_list(request):
