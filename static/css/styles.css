@@ -850,4 +850,47 @@ i.fa.fa-plus, i.fa.fa-minus {
 }
 /* Order items ends */
 
+/* Visit store section styles */
+section.visit-store {
+    min-height: 550px;
+    margin-top: 80px;
+}
+#map{
+    min-height: 450px;
+    width: 80%;
+    padding-top: 60px;
+    float: right;
+}
 
+/* t&c section*/
+section.legal {
+    background: rgb(2, 44, 2);
+    min-height: 300px;
+    margin-top: 70px;
+}
+
+section.legal h1 {
+    color: #fff;
+    padding-top: 70px;
+}
+
+section.legal p {
+    color: rgb(201, 197, 197);
+}
+
+.container.policy-content-wrap {
+    padding-top: 70px;
+    margin-bottom: 60px;
+}
+
+.container.policy-content-wrap p {
+    line-height: 25px;
+}
+
+.policy-content li {
+    line-height: 25px;
+}
+
+a.policy_list {
+    color: #777;
+}

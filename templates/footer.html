@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="footer_wrapper">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="footer-content col-md-3 col-sm-6">
                     <h5>Quick Links</h5>
                     <ul class="footer_items">
                         <li><a href="{% url 'index' %}">Home</a></li>
@@ -13,7 +13,7 @@
                         <li><a href="{% url 'blog_list' %}">Blog</a></li>
                         <li><a href="">FAQs</a></li>
                         <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
-                        <li><a href="">Whitepaapers</a></li>
+                        <li><a href="{% url 'whitepapers' %}">Whitepaapers</a></li>
                         <li><a href="">Help & Support</a></li>
                     </ul>
                     <p className='pl-2 footer-email'>
@@ -28,10 +28,10 @@
                         <i class='fab fa-whatsapp'> +234 (0) 809 1029 404 </i>
                     </p>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="footer-content col-md-3 col-sm-6">
                     <h5>Marketplace</h5>
                     <ul class="footer_items">
-                        <li><a href="">Visit Our Store</a></li>
+                        <li><a href="#">Visit Our Store</a></li>
                         <li><a href="">Sell Your Products</a></li>
                         <li><a href="">Advertise With Us</a></li>
                         <li><a href="">Shipping Information</a></li>
@@ -39,18 +39,18 @@
                         <li><a href="">Become a Distributor</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="footer-content col-md-3 col-sm-6">
                     <h5>Legal Policies</h5>
                     <ul class="footer_items">
-                        <li><a href="">Terms & Conditions</a></li>
-                        <li><a href="">Returns Policy</a></li>
-                        <li><a href="">Privacy Policy</a></li>
-                        <li><a href="">Cookie Tracking</a></li>
-                        <li><a href="">Disclaimers</a></li>
+                        <li><a href="{% url 'terms_and_conditions' %}">Terms & Conditions</a></li>
+                        <li><a href="{% url 'return_policy' %}">Returns Policy</a></li>
+                        <li><a href="{% url 'privacy_policy' %}">Privacy Policy</a></li>
+                        <li><a href="{% url 'cookie_policy' %}">Cookie Tracking</a></li>
+                        <li><a href="{% url 'disclaimer' %}">Disclaimers</a></li>
                         <li><a href="">Report Abuse</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="footer-content col-md-3 col-sm-6">
                     <h5>Connect With Us</h5>
                     <ul class="footer_items">
                         <li class="list-inline-item"><a href="https://www.facebook.com/naturessigns"><i

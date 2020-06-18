@@ -69,6 +69,7 @@ def contact_us(request):
         form_first_name = form.cleaned_data.get('first_name')
         form_last_name = form.cleaned_data.get('last_name')
         form_contact_email = form.cleaned_data.get('contact_email')
+        form_contact_phone = form.cleaned_data.get('contact_phone')
         form_message = form.cleaned_data.get('message')
         form_full_name = form_first_name + ' ' + form_last_name
 
@@ -79,7 +80,7 @@ def contact_us(request):
         %s: %s via %s 
         '''%(form_full_name,
             form_message,
-            form_contact_email
+            form_contact_email,
         )
 
         send_mail(
@@ -91,6 +92,10 @@ def contact_us(request):
     
     return render(request, 'contact_us.html', {'form': form})
 
+
+# Store map view
+def visit_a_store(request):
+    return render(request, 'visit_store.html')
     
 
 # @login_required(login_url='/accounts/login/')

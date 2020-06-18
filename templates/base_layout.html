@@ -131,6 +131,21 @@
         document.getElementById("_q").value = "{{query}}"
     </script>
     <!-- Slugify title ends -->
+    
+    <!-- Google Map API Script -->
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            var mapOptions = {
+                zoom: 8,
+                center: {lat:4.8133, lng:7.0203}
+            }
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4bx7jaH49pzZ8qUYCGNT3lXZhwxdmDEA&callback=initMap">
+    </script>
 
 </body>
 

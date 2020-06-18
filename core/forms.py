@@ -1,4 +1,5 @@
 from django import forms
+from phonenumber_field.formfields import PhoneNumberField
 
 STATES = (
     ('', 'select'),
@@ -80,7 +81,12 @@ class ContactUsForm(forms.Form):
         ), label="", max_length=254, required=True
     )
 
+    """ contact_phone = PhoneNumberField(widget=forms.TextInput(
+        attrs={'placeholder': 'Phone ( Optional )' }
+        ), label="", max_length=15, required=False
+    ) """
+
     message = forms.CharField(widget=forms.Textarea(
-        attrs={'placeholder': 'Message'}
+        attrs={'placeholder': 'Leave Us Your Message'}
         ), label="", max_length=1500, required=True 
     )

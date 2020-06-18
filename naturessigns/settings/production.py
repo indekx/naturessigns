@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'core',
     'crispy_forms',
     'documents',
+    'faqs',
     'newsletter',
     'search',
 ]
