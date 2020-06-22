@@ -2,8 +2,6 @@ from django import forms
 from .models import Join
 
 # Join newsletter form
-
-
 class JoinNewsLetterForm(forms.ModelForm):
     email = forms.EmailField(widget=forms.EmailInput(
         attrs={'placeholder': 'Your newsletter email',

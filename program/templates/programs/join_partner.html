@@ -1,0 +1,22 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+<section class="join-affiliate">
+	<div class="container affiliate">
+		<div class="join-affiliate-wrap">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="alert alert-info">
+						<p> Think you have high quality products with tremendous health benefits?
+							At Nature's Signs, we're open to partnering great brands around the world
+							in complementing their efforts toward ensuring that people live better life.
+						</p>
+						<p>We'd like to promote and sell your products. Interested?</p>
+					</div>
+					<a href="{% url 'partner_register' %}" class="btn btn-outline-success mt-2">Let's Start Now</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+<section class="partner-reg-success">
+    <div class="container reg-success">
+        <div class="alert alert-success text-center" role="alert">
+            Thank you, your application has been received and will go through careful review by our team
+            who'll then get back to you soonest on the next step.
+            <span><a href="{% url 'index' %}" class="btn btn-link">Return to homepage</a></span>
+        </div>
+    </div>
+</section>
+{% endblock %}

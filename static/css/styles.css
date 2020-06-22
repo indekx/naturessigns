@@ -894,3 +894,49 @@ section.legal p {
 a.policy_list {
     color: #777;
 }
+
+/* Affiliate section begins */
+section.join-affiliate, section.partner-registration {
+    margin-top: 70px;
+    min-height: 300px;
+    padding-bottom: 70px;
+}
+
+section.partner-registration {
+    background-color: rgb(245, 239, 239);
+}
+
+.join-affiliate-wrap {
+    padding-top: 45px;
+}
+
+.container.affiliate {
+    border-top: 1px solid black;
+}
+
+.container.registration-reg {
+    padding-top: 45px;
+}
+
+.partner-reg-btn {
+    padding-left: 5px !important;
+}
+
+section.partner-reg-success {
+    min-height: 300px;
+    margin-top: 70px;
+}
+.container.reg-success {
+    padding-top: 15px;
+}
+
+section.partner-reg-success a {
+    color: black;
+    font-weight: 700;
+    border-bottom: 1px solid;
+    border-radius: 0;
+    padding: 0 0 2px 0;
+    line-height: 8px;
+    margin-left: 10px;
+}
+/* Affiliate section ends */

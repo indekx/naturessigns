@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls')),
     url(r'^articles/', include('articles.urls')),
     url(r'^documents/', include('documents.urls')),
+     url(r'^program/', include('program.urls')),
     url(r'^search/', include('search.urls')),
 ]
 

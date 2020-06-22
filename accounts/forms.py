@@ -137,6 +137,7 @@ class UserLoginForm(AuthenticationForm):
                 raise forms.ValidationError('This user is inactive')
 
             # This will return whatever is the default
+            
 
             return super(UserLoginForm, self).cleaned(*args, **kwargs)
 
