@@ -1,18 +1,245 @@
 /* Navbar */
 
+@media only screen and (max-width: 1060px) {
+    .navbar-search-form {
+        max-width: 200px !important;   
+    }
+    .search-btn {
+        display: none;
+    }
+    .form-control.mr-md-2.nav-search-box{
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .hero-content h1 {
+        width: auto;
+    }
+
+    .hero-content p {
+        width: 80%;
+    }
+
+    .col-md-6.approach-content h1 {
+        font-size: 2em;
+    }
+
+    .btn.our-approach-btn {
+        margin-bottom: 60px;
+    }
+
+    .col-md-6.approach-content p {
+        font-size: 1rem;
+    }
+
+    .col-md-6.approach-img img {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .card.buy-item img {
+        max-height: 320px;
+        width: fit-content;
+    }
+
+    .btn.vision-mission-btn {
+        margin-left: 0 !important;
+        padding-left: 0;
+    }
+
+    .btn.product-line-btn {
+        margin-left: 70px !important;
+    }
+
+    .highlight-content-wrap {
+        padding-bottom: 45px;
+    }
+
+    .card.featured-cards {
+        margin-top: 50px;
+    }
+
+    /* signup screen */
+    a.forgot_passwor_link.ml-4{
+        margin-left: 15px !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .navbar-search-form{
+        padding-left: 10px !important;
+        width: 90px !important;
+    }
+
+    ul.navbar-search-form {
+        height: 10px;
+    }
+
+    ul.navbar-nav a {
+        font-size: 0.7rem;
+    }
+
+    .form-control.mr-md-2.nav-search-box {
+        padding-bottom: 0;
+        padding-top: 0;
+        line-height: 10px;
+    }
+
+    a.login-btn {
+        margin-right: 12px !important;
+        margin-left: 12px !important;
+    }
+
+    .hero-content-wrapper {
+        padding-top: 110px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .col-sm-12.col-md-6.content-2 h2{
+        margin-left: 40px;
+    }
+
+    .col-sm-12.col-md-6.content-1 h2,.col-sm-12.col-md-6.content-2 h2 {
+        font-size: 1.6rem;
+    }
+    a.btn.product-line-btn {
+        margin-left: 30px !important;
+    }
+
+    .col-sm-12.col-md-6.content-2 p{
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .navbar-search-form {
+        display: none;
+    }
+    section.collections {
+        min-height: 430px;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    a.navbar-brand img {
+        width: 150px;
+    }
     ul.navbar-nav a {
         display: block;
     }
-    .navbar-search-form.form-inline.my-2-lg-0.ml-0.pl-5{
-        display: block;
-        width: 100vw !important;
+    .navbar-search-form{
+        display: none;
+        width: 100px !important;
         padding-left: 0 !important;
         padding-top: 25px; 
         padding-bottom: 25px;
     }
-    ul.navbar-nav.ml-auto{
-        display: block !important;
+    ul.navbar-nav.ml-auto li.nav-item{
+        display: inline !important;
+        padding-left: 13px;
+    }
+
+    a.signup-btn {
+        margin-top: 9px;
+    }
+    a.login-btn.nav-link.nav-btn.btn.btn-success.mr-4.ml-4 {
+        margin-left: 0 !important; 
+        margin-right: 0 !important;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .col-sm-12.col-md-6.content-2 h2{
+        margin-left: 0;
+    }
+    .col-sm-12.col-md-6.content-2 p{
+        margin-left: 0;
+    }
+
+    a.btn.product-line-btn{
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .buy_item.offset-2.col-md-3 {
+        margin-left: 45px !important;
+        margin-right: 45px;
+    }
+
+    .card.product-info {
+        border-top: 0 !important;
+        width: 93%;
+    }
+
+    .offset-1.col-md-4{
+        padding-left: 0 !important;
+    }
+
+    .card.buy-item img {
+        width: auto
+    }
+
+    .col-md-6.approach-content {
+        float: right;
+    }
+
+    .col-md-6.approach-img img {
+        float: left;
+    }
+
+    /* About section */
+    section.collections {
+        min-height: 400px;
+    }
+
+    .offset-1.col-md-4.about-right {
+        margin-left: 15px;
+        margin-top: 30px;
+    }
+
+    .col-md-6.col-sm-12.user-input {
+        width: 100%;
+    }
+    label.form-check-label.requiredField, a.forgot_passwor_link {
+        font-size: 13px;
+    }
+
+    h3.new-signup {
+        font-size: 1.5rem;
+    }
+
+    input.btn.btn-outline-success.signup {
+        padding: 3px 8px;
+    }
+
+    .offset-3.col-sm-9.contact-us {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    section.contact_us h2 {
+        font-size: 1.3rem;
     }
 }
 
+@media screen and (max-width: 600px) {
+    section.collections {
+        min-height: 880px;
+    }
+
+    .mission-vision-accordion.text-center {
+        min-height: 400px;
+    }
+    .col-sm-6.docx.download {
+        padding-top: 30px;
+    }
+
+    .offset-1.col-md-4.about-right {
+        margin-left: 15px;
+    }
+    section#mission-banner {
+        margin-bottom: 800px;
+    }
+}

@@ -495,6 +495,45 @@ a.btn.our-mission-btn:hover {
     text-transform: uppercase;
 }
 
+/* Main mission section */
+section#mission-banner {
+    background-color: black;
+    height: 550px;
+    margin-top: 80px;
+    margin-bottom: 370px;
+}
+
+.mission-page-accordion {
+    padding-top: 90px;
+}
+
+section#mission-banner h1 {
+    color: #fff;
+}
+
+section#mission-banner h2 {
+    color: rgb(255, 247, 247);
+}
+
+i.articles.fas.fa-diagnoses, .docs.fas.fa-file-medical {
+    font-size: 60px;
+    padding-top: 45px;
+    margin-bottom: 30px;
+    color: rgb(52, 170, 101);
+}
+
+/* contact us */
+section.contact_us {
+    margin-top: 75px;
+    background-color: rgb(245, 239, 239);
+}
+
+.contact_us_wrap{
+    padding-top: 50px;
+    align-content: center;
+}
+/* contact us ends */
+
 /* latest article list begins */
 section.article-list-page {
     min-height: 350px;
@@ -811,4 +850,93 @@ i.fa.fa-plus, i.fa.fa-minus {
 }
 /* Order items ends */
 
+/* Visit store section styles */
+section.visit-store {
+    min-height: 550px;
+    margin-top: 80px;
+}
+#map{
+    min-height: 450px;
+    width: 80%;
+    padding-top: 60px;
+    float: right;
+}
 
+/* t&c section*/
+section.legal {
+    background: rgb(2, 44, 2);
+    min-height: 300px;
+    margin-top: 70px;
+}
+
+section.legal h1 {
+    color: #fff;
+    padding-top: 70px;
+}
+
+section.legal p {
+    color: rgb(201, 197, 197);
+}
+
+.container.policy-content-wrap {
+    padding-top: 70px;
+    margin-bottom: 60px;
+}
+
+.container.policy-content-wrap p {
+    line-height: 25px;
+}
+
+.policy-content li {
+    line-height: 25px;
+}
+
+a.policy_list {
+    color: #777;
+}
+
+/* Affiliate section begins */
+section.join-affiliate, section.partner-registration {
+    margin-top: 70px;
+    min-height: 300px;
+    padding-bottom: 70px;
+}
+
+section.partner-registration {
+    background-color: rgb(245, 239, 239);
+}
+
+.join-affiliate-wrap {
+    padding-top: 45px;
+}
+
+.container.affiliate {
+    border-top: 1px solid black;
+}
+
+.container.registration-reg {
+    padding-top: 45px;
+}
+
+.partner-reg-btn {
+    padding-left: 5px !important;
+}
+
+section.partner-reg-success {
+    min-height: 300px;
+    margin-top: 70px;
+}
+.container.reg-success {
+    padding-top: 15px;
+}
+
+section.partner-reg-success a {
+    color: black;
+    font-weight: 700;
+    border-bottom: 1px solid;
+    border-radius: 0;
+    padding: 0 0 2px 0;
+    line-height: 8px;
+    margin-left: 10px;
+}
+/* Affiliate section ends */
