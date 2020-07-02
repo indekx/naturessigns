@@ -939,4 +939,21 @@ section.partner-reg-success a {
     line-height: 8px;
     margin-left: 10px;
 }
+
+ul#id_medium {
+    list-style: none;
+    padding-left: 20px;
+    color: rgb(124, 118, 118);
+    border: 1px solid;
+    border-radius: 5px;
+    padding-top: 5px;
+    
+}
+
+ul#id_medium li {
+    display: inline;
+    margin-right: 10px;
+    padding-top: 10px;
+}
+
 /* Affiliate section ends */
