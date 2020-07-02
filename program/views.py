@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import PartnerJoinForm, SellApplyForm
+from .forms import PartnerJoinForm, SellApplyForm, BecomeDistributorForm
 from .models import PartnerJoin, SellApply
 
 from django.contrib.auth.decorators import login_required
@@ -31,10 +31,11 @@ def sell_apply_success(request):
     return render(request, 'programs/sell_apply_success.html')
 
 
-#@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def sell_apply_view(request):
     if request.method == 'POST':
-        form = SellApplyForm(request.POST, request.FILES)  # Initialize the form
+        # Initialize the form
+        form = SellApplyForm(request.POST, request.FILES)
         if form.is_valid():
             sell_form_instance_create = form.save(commit=False)
             sell_form_instance_create.save()
@@ -42,3 +43,20 @@ def sell_apply_view(request):
     else:
         form = SellApplyForm
     return render(request, 'programs/sell_apply.html', {'form': form})
+
+
+def distributor_apply_success(request):
+    return render(request, 'programs/distributor_apply_success.html')
+
+
+def become_distributor_view(request):
+    if request.method == 'POST':
+        form = BecomeDistributorForm(            
+            request.POST or None)  # Initialize the form
+        if form.is_valid():
+            form_instance_create = form.save(commit=False)
+            form_instance_create.save()
+            return redirect('distributor_apply_success')
+    else:
+        form = BecomeDistributorForm
+    return render(request, 'programs/become_distributor.html', {'form': form})

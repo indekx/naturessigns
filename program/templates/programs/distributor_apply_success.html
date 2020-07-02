@@ -1,0 +1,14 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+<section class="partner-reg-success">
+    <div class="container reg-success">
+        <div class="alert alert-success text-center" role="alert">
+            Thank you, your application has been received and is being reviewed. We'll get 
+            back to you soonest. Meanwhile, you can stay updated on latest promos and feeds by subscribing
+            to our informative newsletters.
+            <span><a href="{% url 'index' %}" class="btn btn-link">Proceed</a></span>
+        </div>
+    </div>
+</section>
+{% endblock %}

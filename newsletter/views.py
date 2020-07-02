@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import FormView
+from django.views.generic import CreateView
 from .forms import JoinNewsLetterForm
 
 # Create your views here.
-class NewsletterSubscribe(FormView):
+class NewsletterSubscribe(CreateView):
     template_name = 'footer.html'
     form_class = JoinNewsLetterForm
     success_url = '/'

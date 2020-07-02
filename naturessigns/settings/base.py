@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'documents',
     'django_countries',
     'faqs',
+    'multiselectfield',
     'newsletter',
     'program',
     'search',

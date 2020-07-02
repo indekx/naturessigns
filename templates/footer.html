@@ -1,5 +1,5 @@
 {% load crispy_forms_tags %}
-{% load static %}
+{% load widget_tweaks %}
 
 <section id="footer">
     <div class="container-fluid">
@@ -36,7 +36,7 @@
                         <li><a href="">Advertise With Us</a></li>
                         <li><a href="">Shipping Information</a></li>
                         <li><a href="{% url 'partner' %}">Let's Partner</a></li>
-                        <li><a href="">Become a Distributor</a></li>
+                        <li><a href="{% url 'become_distributor' %}">Become a Distributor</a></li>
                     </ul>
                 </div>
                 <div class="footer-content col-md-3 col-sm-6">
@@ -65,9 +65,9 @@
                     <!-- newsletter subscribe -->
                     <form method="POST">
                         {% csrf_token %}
-                        <!-- <div class="form-row">
-                            {{form|crispy}}
-                        </div> -->
+                        <div class="form-row">
+                           
+                        </div> 
                     </form>
                 </div>
             </div>

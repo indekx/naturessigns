@@ -1,5 +1,5 @@
 from django import forms
-from .models import PartnerJoin, SellApply
+from .models import PartnerJoin, SellApply, BecomeDistributor
 
 from phonenumber_field.formfields import PhoneNumberField
 from django_countries.widgets import CountrySelectWidget
@@ -37,3 +37,10 @@ class SellApplyForm(forms.ModelForm):
             'date_produced', 'expiry_date', 'selling_price',
         )
         widgets = {'country': CountrySelectWidget()}
+
+
+# Join distributor form
+class BecomeDistributorForm(forms.ModelForm):
+    class Meta:
+        model = BecomeDistributor
+        fields = '__all__'

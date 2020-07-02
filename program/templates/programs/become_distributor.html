@@ -1,0 +1,70 @@
+{% extends "base_layout.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+<section class="partner-registration">
+    <div class="container registration-reg">
+        <div class="row">
+            <div class="form-group offset-md-3 col-md-9 col-sm-12 mb-0 mt-4">
+                <h4>Join our distributors network and grow your business</h4>
+                <br>
+            </div>
+        </div>
+        <div class="join-distributors-wrap">
+            <form class="sign-form" method="POST">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group offset-md-3 col-md-3 mb-4">
+                        {% render_field form.full_name class='input form-control' placeholder='Your Full Name' rows="20" %}
+                    </div>
+                    <div class="form-group col-md-3 mb-4">
+                        {% render_field form.email class='input form-control' placeholder='Email Address' rows="20" %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group offset-md-3 col-md-2 mb-4">
+                        <label class="pl-3">Gender</label>
+                        {% render_field form.gender class='input form-control' rows="20" %}
+                    </div>
+                    <div class="form-group col-md-1 mb-4">
+                        <label class="pl-3">Age</label>
+                        {% render_field form.age class='input form-control' rows="20" %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group offset-md-3 col-md-6 mb-4">
+                        {% render_field form.contact_address class='input form-control' rows="20"  placeholder='Contact Address'%}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group offset-md-3 col-md-2 mb-4">
+                        <label class="pl-3">I Apply As</label>
+                        {% render_field form.i_apply_as class='input form-control' rows="20" %}
+                    </div>
+                    <div class="form-group col-md-3 mb-4">
+                        <label class="pl-3">Phone Number</label>
+                        {% render_field form.phone_number class='input form-control' rows="20" %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group offset-md-3 col-md-6 mb-0">
+                        <label class="pl-0">How did you hear about us?</label>
+                        {% render_field form.medium %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group offset-md-3 col-md-2 mb-3">
+                        <label> Daily volume</label>
+                        {% render_field form.weekly_sales_qty class='input form-control' %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="partner-reg-btn form-group offset-md-3  col-md-12 mb-5">
+                        <input type="submit" value="Apply" class="btn btn-success mt-3">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
