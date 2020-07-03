@@ -854,7 +854,7 @@ i.fa.fa-plus, i.fa.fa-minus {
 section.how-to-buy {
     min-height: 450px;
     margin-top: 80px;
-    background-color: black;
+    background-color: rgb(15, 1, 1);
 }
 
 .wrap {
