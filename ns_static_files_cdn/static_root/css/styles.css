@@ -851,15 +851,32 @@ i.fa.fa-plus, i.fa.fa-minus {
 /* Order items ends */
 
 /* Visit store section styles */
-section.visit-store {
-    min-height: 550px;
-    margin-top: 80px;
-}
-#map{
+section.how-to-buy {
     min-height: 450px;
-    width: 80%;
+    margin-top: 80px;
+    background-color: black;
+}
+
+.wrap {
     padding-top: 60px;
-    float: right;
+    text-align: center;
+}
+
+ .wrap h2{
+    color: white;
+    margin-top: 50px;
+    padding-left: 0;
+    font-weight: 600;
+}
+
+.wrap p {
+    color: rgb(238, 235, 235);
+    line-height: 30px;
+}
+
+p.order-help {
+    font-size: 0.9rem;
+    line-height: 25px;
 }
 
 /* t&c section*/

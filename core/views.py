@@ -94,8 +94,8 @@ def contact_us(request):
 
 
 # Store map view
-def visit_a_store(request):
-    return render(request, 'visit_store.html')
+def how_to_buy(request):
+    return render(request, 'how_to_buy.html')
     
 
 # @login_required(login_url='/accounts/login/')

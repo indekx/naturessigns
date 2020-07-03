@@ -31,10 +31,9 @@
                 <div class="footer-content col-md-3 col-sm-6">
                     <h5>Marketplace</h5>
                     <ul class="footer_items">
-                        <li><a href="#">Visit Our Store</a></li>
+                        <li><a href="{% url 'how_to_buy' %}">How to  Order</a></li>
                         <li><a href="{% url 'sell_apply' %}">Sell Your Products</a></li>
-                        <li><a href="">Advertise With Us</a></li>
-                        <li><a href="">Shipping Information</a></li>
+                        <!-- <li><a href="">Advertise With Us</a></li> -->
                         <li><a href="{% url 'partner' %}">Let's Partner</a></li>
                         <li><a href="{% url 'become_distributor' %}">Become a Distributor</a></li>
                     </ul>
@@ -63,7 +62,7 @@
                             class="fab fa-linkedin-in"></i></a></li>
                     </ul>
                     <!-- newsletter subscribe -->
-                    <form method="POST">
+                    <form method="POST" action="/">
                         {% csrf_token %}
                         <div class="form-row">
                            
