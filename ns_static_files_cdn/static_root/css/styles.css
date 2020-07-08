@@ -973,6 +973,10 @@ ul#id_medium li {
     padding-top: 10px;
 }
 
+/* Affiliate section ends */
+
+/* Prostate page begins */
+
 section.prostate {
     background-color: rgb(3, 27, 3);
     min-height: 200px;
@@ -1005,6 +1009,7 @@ section.prostate {
     border-radius: 0;
     line-height: 8px;
     box-sizing: border-box;
+    font-size: 0.8rem;
 }
 
 .prostate-main-content-wrap {
@@ -1043,4 +1048,4 @@ a.tread-prostate {
     font-weight: 600;
 }
 
-/* Affiliate section ends */
+/* Prostate page ends */
