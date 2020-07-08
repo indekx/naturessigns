@@ -973,4 +973,74 @@ ul#id_medium li {
     padding-top: 10px;
 }
 
+section.prostate {
+    background-color: rgb(3, 27, 3);
+    min-height: 200px;
+    margin-top: 60px;
+    padding-bottom: 45px;
+}
+
+.prostate-banner-wrap {
+    padding-top: 45px;
+}
+
+.prostate h2{
+    color: white;
+    font-weight: 600;
+    padding-top: 20px;
+}
+
+.prostate p {
+    color: rgb(238, 236, 236);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.btn.enlarged-prostate-buy-prostaright {
+    background-color: transparent;
+    color: #cec8c8;
+    text-transform: uppercase;
+    padding: 0 12px 0 8px;
+    border-left: 1px #cec8c8 solid;
+    border-radius: 0;
+    line-height: 8px;
+    box-sizing: border-box;
+}
+
+.prostate-main-content-wrap {
+    padding-top: 60px;
+}
+
+section.prostate-main-content {
+    min-height: 450px;
+    margin-bottom: 80px;
+}
+
+.prostate-main-content-wrap h1 {
+    font-size: 2.3rem;
+    line-height: 45px;
+    font-weight: 600;
+}
+
+
+.prostate-main-content-wrap h3 {
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.prostate-main-content-wrap p {
+    line-height: 30px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+ul.bph-signs li{
+    line-height: 30px;
+}
+
+a.tread-prostate {
+    color: green;
+    font-weight: 600;
+}
+
 /* Affiliate section ends */

@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^about/mission/$', views.our_mission, name='our_mission'),
     url(r'^contact_us/$', views.contact_us, name='contact_us'),
     url(r'^how_to_buy/$', views.how_to_buy, name='how_to_buy'),
+    url(r'^health/enlarged_prostate/$', views.enlarged_prostate_view, name='enlarged_prostate'),
     url(r'^resources/$', views.email_subscribe, name='email_subscribe'),
     url(r'^services/$', views.our_services, name='our_services'),
     url(r'^legal/privacy_policy/$', views.privacy_policy, name='privacy_policy'),

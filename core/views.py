@@ -61,6 +61,9 @@ def about_us(request):
 def our_mission(request):
     return render(request, 'mission.html')
 
+def enlarged_prostate_view(request):
+    return render(request, 'prostate/enlarged_prostate.html')
+
 
 #Contact us view
 def contact_us(request):
