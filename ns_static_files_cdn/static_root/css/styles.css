@@ -1044,8 +1044,38 @@ ul.bph-signs li{
 }
 
 a.tread-prostate {
-    color: green;
+    color: rgb(52, 170, 101);
     font-weight: 600;
+}
+
+.prostate-main-points {
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+
+ul.enlarged-prostate-nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+
+li.prostate-nav-list-items {
+    border-right: 1px solid;
+    margin-right: 25px;
+}
+
+a.enlarged-prostate-nav-links {
+    padding-left: 0;
+    padding-right: 25px;
+    color: rgb(52, 170, 101);
+    font-weight: 600;
+    font-size: 1em;
+}
+
+a.enlarged-prostate-nav-links:hover {
+    color: #777;
+    text-decoration: none;
 }
 
 /* Prostate page ends */
