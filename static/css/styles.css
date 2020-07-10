@@ -1080,7 +1080,7 @@ a.enlarged-prostate-nav-links:hover {
 }
 
 .col-md-4.pt-4.infographic {
-    border-top: 2px solid;
+    border-top: 2px solid rgb(52, 170, 101);
     padding-left: 0;
     padding-right: 0;
     margin-top: 20px;
@@ -1116,8 +1116,8 @@ a.card-title.infographic-links {
 .card-body.infographic-content h5 {
     font-size: 1em;
     line-height: 23px;
-    padding-top: 12px;
-    margin-bottom: 12px;
+    padding-top: 6px;
+    margin-bottom: 20px;
     color: rgb(100, 98, 98);
 }
 
