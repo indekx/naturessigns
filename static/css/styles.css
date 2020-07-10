@@ -1037,13 +1037,14 @@ section.prostate-main-content {
     line-height: 30px;
     font-size: 1.1rem;
     margin-top: 20px;
+    padding-right: 35px;
 }
 
 ul.bph-signs li{
     line-height: 30px;
 }
 
-a.tread-prostate {
+a.treat-prostate {
     color: rgb(52, 170, 101);
     font-weight: 600;
 }
@@ -1076,6 +1077,48 @@ a.enlarged-prostate-nav-links {
 a.enlarged-prostate-nav-links:hover {
     color: #777;
     text-decoration: none;
+}
+
+.col-md-4.pt-4.infographic {
+    border-top: 2px solid;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 20px;
+}
+
+.card-header.natural-medicine-infogrphic {
+    background: rgb(52, 170, 101);
+}
+
+.card-header.natural-medicine-infogrphic h1 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.card-header.natural-medicine-infogrphic h5 {
+    color: #f3e9e9;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.card-body.infographic-content {
+    background: #cec8c8;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+a.card-title.infographic-links {
+    color: rgb(59, 57, 57);
+    font-weight: 700;
+}
+
+.card-body.infographic-content h5 {
+    font-size: 1em;
+    line-height: 23px;
+    padding-top: 12px;
+    margin-bottom: 12px;
+    color: rgb(100, 98, 98);
 }
 
 /* Prostate page ends */
