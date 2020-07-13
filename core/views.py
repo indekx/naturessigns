@@ -19,7 +19,7 @@ from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.views import generic
 from django.views.generic import CreateView, DeleteView, UpdateView, DetailView,View, FormView, View
-from requests.api import request
+# from requests.api import request
 
 from django.core.files.storage import FileSystemStorage
 
