@@ -14,21 +14,11 @@ from django.utils.translation import ugettext_lazy
 
 from decimal import Decimal
 
-
-class Category(models.Model):
-    cat_name = models.CharField(max_length=160)
-    slug = models.SlugField(blank=True, null=True, unique=True, max_length=250)
-    
-    class Meta:
-        ordering = ('cat_name',)
-        verbose_name = 'category'
-        verbose_name_plural = 'categories'
-
-    def get_absolute_url(self):
-        return reverse('items_by_category', args=[self.slug])
-
-    def __str__(self):
-        return self.cat_name
+CATEGORY_CHOICES = (
+    ('', 'select'),
+    ('ORG', 'Organic Formulations'),
+    ('BODY CARE', 'Body Care')
+)
 
 
 class ItemQuerySet(models.query.QuerySet):
@@ -68,7 +58,7 @@ class Item(models.Model):
     image = models.ImageField(blank=False, default=None, null=False)
     price = models.DecimalField(blank=False, null=False, default=None, max_digits=19, decimal_places=2)
     discount_price = models.DecimalField(blank=True, null=True, default=None, max_digits=19, decimal_places=2)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
+    category = models.CharField(choices=CATEGORY_CHOICES, default='select', max_length=20, null=True, blank=True)
     label = models.CharField(choices=LABEL_CHOICES, max_length=15, default='select')
     description = models.TextField(blank=False, max_length=3000)
     featured = models.BooleanField(default=False)
@@ -153,7 +143,7 @@ class Order(models.Model):
         return Decimal('7.50')/Decimal(100) * self.get_sum_total()
 
     def get_amount_payable(self):
-        return self.get_sum_total() + self.get_vat()    
+        return self.get_sum_total() + self.get_vat()
 
 
 class BillingAddress(models.Model):
@@ -168,3 +158,17 @@ class BillingAddress(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class FrequentlyAskedQuestion(models.Model):
+    topic = models.CharField(max_length=120, blank=True)
+    question = models.CharField(max_length=120)
+    slug = models.SlugField()
+    answer = models.TextField(max_length=3500)
+
+    class Meta:
+        verbose_name = 'Frequently Asked Question'
+        verbose_name_plural = 'Frequently Asked Questions'
+
+    def __str__(self):
+        return self.question

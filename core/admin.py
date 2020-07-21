@@ -1,20 +1,14 @@
-from django.contrib import admin
+from webbrowser import register
 
 # Register your models here.
 from django.contrib import admin
-from .models import Item, OrderItem, Order, Category
+
+from .models import FrequentlyAskedQuestion, Item, Order, OrderItem
+
 
 class ItemAdmin(admin.ModelAdmin):
     pass
 
-
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = (
-        'cat_name', 'slug',
-    )
-    prepopulated_fields = {
-        'slug':('cat_name',)
-    }
 
 class ProductQSetAdmin(admin.ModelAdmin):
     display = [
@@ -30,7 +24,11 @@ class ProductQSetAdmin(admin.ModelAdmin):
         model = Item
 
 
+class FrequentlyAskedQuestionAdmin(admin.ModelAdmin):
+    list_display = ('topic', 'question', 'answer')
+
+
 admin.site.register(Item, ItemAdmin)
 admin.site.register(OrderItem)
 admin.site.register(Order)
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(FrequentlyAskedQuestion, FrequentlyAskedQuestionAdmin)

@@ -1,7 +1,7 @@
 from os import path
 from django.conf.urls import url
 from django.urls import path
-from .views import OrderSummaryView, OrderCheckoutView
+from .views import OrderSummaryView, OrderCheckoutView, FAQsListView
 from core import views
 from core.views import index_view
 
@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^about/mission/$', views.our_mission, name='our_mission'),
     url(r'^contact_us/$', views.contact_us, name='contact_us'),
     url(r'^how_to_buy/$', views.how_to_buy, name='how_to_buy'),
+     url(r'^faqs/$', FAQsListView.as_view(), name='faq_list'),
     url(r'^health/enlarged_prostate/$', views.enlarged_prostate_view, name='enlarged_prostate'),
     url(r'^resources/$', views.email_subscribe, name='email_subscribe'),
     url(r'^services/$', views.our_services, name='our_services'),
@@ -26,8 +27,8 @@ urlpatterns = [
     url(r'^products/prostaright_tea/$', views.product_prostaright, name='prostaright_tea'),
     url(r'^services/drugs/$', views.drugs, name='drugs'),
     url(r'^checkout/', OrderCheckoutView.as_view(), name='proceed_to_pay'),
-    url(r'^products/category/(?P<category_slug>[\w-]+)/$', views.item_category_view, name="items_by_category"),
-    url(r'^products/category_detail/(?P<category_slug>[\w-]+)/$', views.cat_detail_view, name='category_detail'),
+    # url(r'^products/category/(?P<category_slug>[\w-]+)/$', views.item_category_view, name="items_by_category"),
+    # url(r'^products/category_detail/(?P<category_slug>[\w-]+)/$', views.cat_detail_view, name='category_detail'),
     url(r'^products/(?P<slug>[\w-]+)/$', views.product, name='product_detail'),
     url(r'^add_to_cart/(?P<slug>[\w-]+)/$', views.add_to_cart, name='add_to_cart'),
     url(r'^remove_from_cart/(?P<slug>[\w-]+)/$', views.remove_from_cart, name='remove_from_cart'),

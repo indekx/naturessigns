@@ -1122,3 +1122,21 @@ a.card-title.infographic-links {
 }
 
 /* Prostate page ends */
+
+/* faq section style begins */
+section.faqs {
+    margin-bottom: 60px;
+}
+.faq-content-wrap {
+    padding-top: 50px;
+}
+.card-body.faq-answer {
+    padding-left: 60px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    color: #777;
+}
+.btn.btn-link.faq-btn {
+    color: rgb(52, 170, 101);
+    font-size: 1.2rem;
+}
+/* faq section style ends */

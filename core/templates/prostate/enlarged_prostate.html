@@ -6,16 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="prostate">
-    <div class="container">
-        <div class="prostate-banner-wrap">
-            <h2>Don't forget your</h2>
-            <p>ProstaRight Tea</p>
-            <a class="btn enlarged-prostate-buy-prostaright" href="{% url 'marketplace' %}">Buy Now
-                <span class="fas fa-external-link-alt ml-2"></span></a>
-        </div>
-    </div>
-</section>
+{% include "prostate/prostate-snippet.html" %}
 <section class="prostate-main-content">
     <div class="container">
         <div class="prostate-main-content-wrap">

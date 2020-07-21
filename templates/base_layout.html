@@ -28,7 +28,6 @@
     <meta name='description' content="Solutions to Prostate, Leading Source of Natural Health Products. Our ProstaRight Tea ranks top for shrinking enlarged Prostate.">
     <meta name="keyword" content="Enlarged Prostate, Solutions to Prostate, Organic Formulations, Nature's Signs - naturessigns.com">
     <meta name="author" content="Nature's Signs Ltd">
-    <base href="https://www.naturessigns.com">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.naturessigns.com" />
     <meta property="og:title" content="Nature's Signs: Buy, Sell Natural & Organic Formulations">
@@ -71,15 +70,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav left">
+                    <li class="nav-item">
+                        <a href="{% url 'index' %}" class="nav-link watch-demo">Home</a>
+                    </li>
                     <li>
                         <a href="{% url 'marketplace' %}" class="nav-link">Marketplace <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'enlarged_prostate' %}" class="nav-link features">ProState</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/" class="nav-link watch-demo">Advice</a>
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'blog_list' %}" class="nav-link hire-us">Blog</a>
@@ -147,6 +146,7 @@
     <!-- Slugify title begins-->
     <script>
         const titleInput = document.querySelector('input[name=title]');
+        const questionInput = document.querySelector('input[name=question]');
         const slugInput = document.querySelector('input[name=slug]');
 
         const slugify = (val) => {

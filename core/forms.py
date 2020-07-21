@@ -81,10 +81,10 @@ class ContactUsForm(forms.Form):
         ), label="", max_length=254, required=True
     )
 
-    """ contact_phone = PhoneNumberField(widget=forms.TextInput(
+    contact_phone = PhoneNumberField(widget=forms.TextInput(
         attrs={'placeholder': 'Phone ( Optional )' }
         ), label="", max_length=15, required=False
-    ) """
+    )
 
     message = forms.CharField(widget=forms.Textarea(
         attrs={'placeholder': 'Leave Us Your Message'}

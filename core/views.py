@@ -18,14 +18,15 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.views import generic
-from django.views.generic import CreateView, DeleteView, UpdateView, DetailView,View, FormView, View
+from django.views.generic import (CreateView, DeleteView, UpdateView, 
+    DetailView,View, FormView, View, ListView)
 # from requests.api import request
 
 from django.core.files.storage import FileSystemStorage
 
 from . import forms
 from .forms import CheckOutForm
-from .models import Item, Order, OrderItem, BillingAddress, Category
+from .models import Item, Order, OrderItem, BillingAddress, FrequentlyAskedQuestion
 
 # from scipy.constants.constants import slug
 
@@ -72,7 +73,7 @@ def contact_us(request):
         form_first_name = form.cleaned_data.get('first_name')
         form_last_name = form.cleaned_data.get('last_name')
         form_contact_email = form.cleaned_data.get('contact_email')
-        form_contact_phone = form.cleaned_data.get('contact_phone')
+        # form_contact_phone = form.cleaned_data.get(str('contact_phone'))
         form_message = form.cleaned_data.get('message')
         form_full_name = form_first_name + ' ' + form_last_name
 
@@ -84,6 +85,7 @@ def contact_us(request):
         '''%(form_full_name,
             form_message,
             form_contact_email,
+            # form_contact_phone
         )
 
         send_mail(
@@ -278,7 +280,7 @@ def remove_from_cart(request, slug):
             return redirect('order_summary')          
         else:
             messages.info(request, "This item was not in your cart") 
-            return redirect('product_detail', slug=slug)         
+            return redirect('product_detail', slug=slug)   
     else: 
         messages.info(request, "You do not have any active order") 
         return redirect('product_detail', slug=slug)
@@ -332,24 +334,8 @@ def get_item_queryset(query=None):
     return list(set(queryset))
 
 
-def item_category_view(request, category_slug):
-    categories = Category.objects.all()
-    item = Item.objects.filter(title='title')
-    if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
-        item = item.filter(category=category)
-    template_name = 'cats/item_category.html'
-    context = {
-            'categories': categories, 'item': item, 'category': category
-        }
-    return render(request, template_name, context)
-
-
-def cat_detail_view(request, category_slug):
-    template_name = 'cats/cat_detail.html'
-    category = get_object_or_404(Category, category_slug=category_slug)
-    item = Item.objects.filter(category=category)
-    context = {
-            'category': category, 'item': item,
-        }
-    return render(request, template_name, context)
+class FAQsListView(ListView):
+    model = FrequentlyAskedQuestion
+    template_name = 'faqs/faqs_list.html'
+    context_object_name = 'faqs'
+    paginate_by = 10

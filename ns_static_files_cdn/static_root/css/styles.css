@@ -1035,9 +1035,9 @@ section.prostate-main-content {
 
 .prostate-main-content-wrap p {
     line-height: 30px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 20px;
-    padding-right: 35px;
+    padding-right: 25px;
 }
 
 ul.bph-signs li{
@@ -1080,7 +1080,7 @@ a.enlarged-prostate-nav-links:hover {
 }
 
 .col-md-4.pt-4.infographic {
-    border-top: 2px solid;
+    border-top: 2px solid rgb(52, 170, 101);
     padding-left: 0;
     padding-right: 0;
     margin-top: 20px;
@@ -1116,9 +1116,27 @@ a.card-title.infographic-links {
 .card-body.infographic-content h5 {
     font-size: 1em;
     line-height: 23px;
-    padding-top: 12px;
-    margin-bottom: 12px;
+    padding-top: 6px;
+    margin-bottom: 20px;
     color: rgb(100, 98, 98);
 }
 
 /* Prostate page ends */
+
+/* faq section style begins */
+section.faqs {
+    margin-bottom: 60px;
+}
+.faq-content-wrap {
+    padding-top: 50px;
+}
+.card-body.faq-answer {
+    padding-left: 60px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    color: #777;
+}
+.btn.btn-link.faq-btn {
+    color: rgb(52, 170, 101);
+    font-size: 1.2rem;
+}
+/* faq section style ends */
