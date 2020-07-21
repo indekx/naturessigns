@@ -338,4 +338,4 @@ class FAQsListView(ListView):
     model = FrequentlyAskedQuestion
     template_name = 'faqs/faqs_list.html'
     context_object_name = 'faqs'
-    paginate_by = 10
+    paginate_by = 7
