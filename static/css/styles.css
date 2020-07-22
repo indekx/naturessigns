@@ -1138,5 +1138,14 @@ section.faqs {
 .btn.btn-link.faq-btn {
     color: rgb(52, 170, 101);
     font-size: 1.2rem;
+    font-weight: 600;
+}
+.btn.btn-link.faq-btn:hover {
+    text-decoration: none;
+    color: black;
+}
+.card-header {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 /* faq section style ends */

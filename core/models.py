@@ -163,7 +163,6 @@ class BillingAddress(models.Model):
 class FrequentlyAskedQuestion(models.Model):
     topic = models.CharField(max_length=120, blank=True)
     question = models.CharField(max_length=120)
-    slug = models.SlugField()
     answer = models.TextField(max_length=3500)
 
     class Meta:

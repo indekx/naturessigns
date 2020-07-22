@@ -330,7 +330,6 @@ def get_item_queryset(query=None):
 
         for item in search_items:
             queryset.append(item)
-
     return list(set(queryset))
 
 

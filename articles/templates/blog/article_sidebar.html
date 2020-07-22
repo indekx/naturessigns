@@ -2,13 +2,18 @@
     <div class="articles-detail-sidebar text-center">
         <h4 class="card-header">Don't Miss Anything Important</h4>
         <p class="text-muted">
-            <ul class="list-group articles-detail-sidebar">
-                <li class="list-group-item list-group-item-light">Latest Articles</li>
-                <li class="list-group-item list-group-item-light">News Feeds</li>
-                <li class="list-group-item list-group-item-light">Send Us Feedback</li>
-                <li class="list-group-item list-group-item-light">Become a Contributor</li>
-                <li class="list-group-item list-group-item-light">Comment on Article</li>
-            </ul>
+        <ul class="list-group articles-detail-sidebar">
+            <li class="list-group-item list-group-item-light">
+                <a class="article-snippet-menu" href="{% url 'blog_list' %}">Latest Articles</a></li>
+            <li class="list-group-item list-group-item-light">
+                <a class="article-snippet-menu">News Feeds</a></li>
+            <li class="list-group-item list-group-item-light">
+                <a class="article-snippet-menu">Send Us Feedback</a></li>
+            <li class="list-group-item list-group-item-light">
+                <a class="article-snippet-menu">Become a Contributor</a></li>
+            <li class="list-group-item list-group-item-light">
+                <a class="article-snippet-menu">Comment on Article</a></li>
+        </ul>
         </p>
     </div>
 </div>
