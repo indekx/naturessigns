@@ -1148,4 +1148,8 @@ section.faqs {
     padding-top: 0;
     padding-bottom: 0;
 }
+
+a.article-snippet-menu {
+    color: #818182;
+}
 /* faq section style ends */
