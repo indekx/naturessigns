@@ -130,7 +130,6 @@ def product_prostaright(request):
     return render(request, 'products_list/prostaright_tea.html')
 
 
-# Create your views here.
 @login_required(login_url='/accounts/login/')
 def add_product(request):
     if request.method == 'POST':
